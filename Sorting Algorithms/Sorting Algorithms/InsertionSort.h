@@ -12,7 +12,7 @@ namespace sorts
 			j = i;
 			while (j > 0 && dataArr[j - 1] > dataArr[j])
 			{
-				utility::swap(dataArr[j - 1], dataArr[j]);
+				std::swap(dataArr[j - 1], dataArr[j]);
 				j--;
 			}
 		}

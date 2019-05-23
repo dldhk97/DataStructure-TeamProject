@@ -11,7 +11,7 @@ namespace sorts
 			for (int j = 0; j < dataArr.size(); j++)
 			{
 				if (dataArr[i] < dataArr[j])
-					utility::swap(dataArr[i], dataArr[j]);
+					std::swap(dataArr[i], dataArr[j]);
 			}
 		}
 	}
