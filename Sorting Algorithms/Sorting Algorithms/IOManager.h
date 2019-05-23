@@ -6,6 +6,8 @@ enum Menu{INSERT = 1, SORT, DISPLAY, EXIT};
 
 class IOManager
 {
+	std::ostream& menu(std::ostream&);
+
 public:
 	//Getter
 	int getMenu();
