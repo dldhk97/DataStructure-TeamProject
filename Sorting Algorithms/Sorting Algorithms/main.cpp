@@ -24,10 +24,10 @@ int main()
 			sm.insertRandom(recArr);
 			break;
 		case SORT:
-			//sorts::bubbleSort(dataArr);
-			sorts::insertionSort(intArr);
-			sorts::insertionSort(strArr);
-			sorts::insertionSort(recArr);
+			userInput = iom.getSortType();
+			sm.sort(userInput, intArr);
+			sm.sort(userInput, strArr);
+			sm.sort(userInput, recArr);
 			break;
 		case DISPLAY:
 			sm.displayArr(intArr);

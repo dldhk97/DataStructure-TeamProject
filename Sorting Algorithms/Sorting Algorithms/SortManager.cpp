@@ -1,5 +1,6 @@
 #include "SortManager.h"
 
+
 //문자열을 랜덤으로 생성하여 삽입.
 void SortManager::insertRandom(std::vector<std::string>& recArr)
 {

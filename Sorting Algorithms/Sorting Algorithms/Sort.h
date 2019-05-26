@@ -3,3 +3,4 @@
 #include "BubbleSort.h"
 #include "InsertionSort.h"
 #include "QuickSort.h"
+#include "MergeSort.h"
