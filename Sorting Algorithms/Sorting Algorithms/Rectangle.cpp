@@ -10,17 +10,22 @@ Rectangle::Rectangle(double width, double height)
 	this->height = height;
 }
 
+double Rectangle::getArea() const
+{
+	return this->width * this->height;
+}
+
 bool Rectangle::operator>(const Rectangle& T) const
 {
-	return this->width * this->height > T.width * T.height ? true : false;
+	return getArea() > T.getArea() ? true : false;
 }
 bool Rectangle::operator<(const Rectangle& T) const
 {
-	return this->width* this->height < T.width* T.height ? true : false;
+	return this->getArea() < T.getArea() ? true : false;
 }
 
 std::ostream& operator<<(std::ostream& os, const Rectangle& rec)
 {
-	os << "A:" << rec.width * rec.height << ", W:" << rec.width << ", H:" << rec.height;
+	os << "A:" << rec.getArea() << ", W:" << rec.width << ", H:" << rec.height;
 	return os;
 }
