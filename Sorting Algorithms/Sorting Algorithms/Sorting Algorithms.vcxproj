@@ -146,6 +146,7 @@
     <ClCompile Include="IOManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="SortManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BubbleSort.h" />

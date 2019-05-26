@@ -3,6 +3,7 @@
 #include <random>
 #include <ctime>
 #include "IOManager.h"
+#include "Rectangle.h"
 
 const int dataCapacity = 10;
 
@@ -12,8 +13,10 @@ public:
 	template <typename dataType>
 	void insertRandom(std::vector<dataType>& dataArr);
 
+	void insertRandom(std::vector<Rectangle>& recArr);
+
 	template <typename dataType>
-	void displayDataArr(std::vector<dataType>& dataArr);
+	void displayArr(std::vector<dataType>& dataArr);
 };
 
 template <typename dataType>
@@ -27,9 +30,8 @@ void SortManager::insertRandom(std::vector<dataType>& dataArr)
 }
 
 template <typename dataType>
-void SortManager::displayDataArr(std::vector<dataType>& dataArr)
+void SortManager::displayArr(std::vector<dataType>& arr)
 {
-	IOManager iom;
-	for (int i = 0; i < dataArr.size(); i++)
-		iom.displayMessage(std::to_string(dataArr[i]));
+	for (int i = 0; i < arr.size(); i++)
+		std::cout << arr[i] << "\n" ;
 }
