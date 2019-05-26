@@ -12,11 +12,13 @@ class SortManager
 public:
 	template <typename dataType>
 	void insertRandom(std::vector<dataType>& dataArr);
-
+	void insertRandom(std::vector<std::string>& recArr);
 	void insertRandom(std::vector<Rectangle>& recArr);
-
+	
 	template <typename dataType>
 	void displayArr(std::vector<dataType>& dataArr);
+
+	void genRandStr(char* s, const int len);
 };
 
 template <typename dataType>

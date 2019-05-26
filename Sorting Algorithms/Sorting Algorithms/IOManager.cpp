@@ -12,7 +12,7 @@ int IOManager::getMenu()
 		std::cout << "3. 출력" << "\n";
 		std::cout << "4. 종료" << "\n";
 		std::cout << "=====================" << "\n";
-
+		std::cout << "입력 :";
 		std::cin >> userInput;
 		if (INSERT <= userInput && userInput <= EXIT)
 			return userInput;
