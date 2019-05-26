@@ -10,11 +10,17 @@ Rectangle::Rectangle(double width, double height)
 	this->height = height;
 }
 
-void Rectangle::calculateArea()
+bool Rectangle::operator>(const Rectangle& T) const
 {
-	area = width * height;
+	return this->width * this->height > T.width * T.height ? true : false;
 }
-double Rectangle::getArea()
+bool Rectangle::operator<(const Rectangle& T) const
 {
-	return area;
+	return this->width* this->height < T.width* T.height ? true : false;
+}
+
+std::ostream& operator<<(std::ostream& os, const Rectangle& rec)
+{
+	os << "A:" << rec.width * rec.height << ", W:" << rec.width << ", H:" << rec.height;
+	return os;
 }
