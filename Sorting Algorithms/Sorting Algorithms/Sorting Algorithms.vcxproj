@@ -152,6 +152,7 @@
     <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="InsertionSort.h" />
     <ClInclude Include="IOManager.h" />
+    <ClInclude Include="MergeSort.h" />
     <ClInclude Include="QuickSort.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Sort.h" />

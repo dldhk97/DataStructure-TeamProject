@@ -5,9 +5,7 @@ int main()
 {
 	IOManager iom;
 	SortManager sm;
-
-	std::vector<int> intArr;
-	std::vector<std::string> strArr;
+	std::vector<int> dataArr;
 	std::vector<Rectangle> recArr;
 	int userInput;
 
@@ -19,19 +17,16 @@ int main()
 		switch (userInput)
 		{
 		case INSERT:
-			sm.insertRandom(intArr);
-			sm.insertRandom(strArr);
+			sm.insertRandom(dataArr);
 			sm.insertRandom(recArr);
 			break;
 		case SORT:
-			userInput = iom.getSortType();
-			sm.sort(userInput, intArr);
-			sm.sort(userInput, strArr);
-			sm.sort(userInput, recArr);
+			//sorts::bubbleSort(dataArr);
+			sorts::insertionSort(dataArr);
+			sorts::insertionSort(recArr);
 			break;
 		case DISPLAY:
-			sm.displayArr(intArr);
-			sm.displayArr(strArr);
+			sm.displayArr(dataArr);
 			sm.displayArr(recArr);
 			break;
 		}
