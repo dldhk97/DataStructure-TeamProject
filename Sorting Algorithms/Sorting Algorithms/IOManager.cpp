@@ -1,5 +1,17 @@
 #include "IOManager.h"
 
+std::ostream& IOManager::menu(std::ostream& os)
+{
+	os << "=====================" << "\n";
+	os << "1. ë°ì´í„° ëžœë¤ ì‚½ìž…" << "\n";
+	os << "2. ì •ë ¬" << "\n";
+	os << "3. ì¶œë ¥" << "\n";
+	os << "4. ì¢…ë£Œ" << "\n";
+	os << "=====================" << "\n";
+
+	return os;
+}
+
 int IOManager::getMenu()
 {
 	int userInput;
@@ -7,16 +19,16 @@ int IOManager::getMenu()
 	while (1)
 	{
 		std::cout << "=====================" << "\n";
-		std::cout << "1. µ¥ÀÌÅÍ ·£´ý »ðÀÔ" << "\n";
-		std::cout << "2. Á¤·Ä" << "\n";
-		std::cout << "3. Ãâ·Â" << "\n";
-		std::cout << "4. Á¾·á" << "\n";
+		std::cout << "1. ë°ì´í„° ëžœë¤ ì‚½ìž…" << "\n";
+		std::cout << "2. ì •ë ¬" << "\n";
+		std::cout << "3. ì¶œë ¥" << "\n";
+		std::cout << "4. ì¢…ë£Œ" << "\n";
 		std::cout << "=====================" << "\n";
-		userInput = getInt("ÀÔ·Â :");
+		userInput = getInt("ìž…ë ¥ :");
 
 		if (INSERT <= userInput && userInput <= EXIT)
 			return userInput;
-		std::cout << "ÀÔ·ÂÀÌ Àß¸øµÇ¾ú½À´Ï´Ù." << "\n";
+		std::cout << "ìž…ë ¥ì´ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤." << "\n";
 	}
 }
 
@@ -27,17 +39,17 @@ int IOManager::getSortType()
 	while (1)
 	{
 	std::cout << "=====================" << "\n";
-	std::cout << "Á¤·Ä ¼±ÅÃ" << "\n";
-	std::cout << "1. ¹öºí Á¤·Ä" << "\n";
-	std::cout << "2. »ðÀÔ Á¤·Ä" << "\n";
-	std::cout << "3. º´ÇÕ Á¤·Ä" << "\n";
-	std::cout << "4. Äü Á¤·Ä" << "\n";
+	std::cout << "ì •ë ¬ ì„ íƒ" << "\n";
+	std::cout << "1. ë²„ë¸” ì •ë ¬" << "\n";
+	std::cout << "2. ì‚½ìž… ì •ë ¬" << "\n";
+	std::cout << "3. ë³‘í•© ì •ë ¬" << "\n";
+	std::cout << "4. í€µ ì •ë ¬" << "\n";
 	std::cout << "=====================" << "\n";
-	userInput = getInt("ÀÔ·Â :");
+	userInput = getInt("ìž…ë ¥ :");
 	
 	if (BUBBLE <= userInput && userInput <= MERGE)
 		return userInput;
-	std::cout << "ÀÔ·ÂÀÌ Àß¸øµÇ¾ú½À´Ï´Ù." << "\n";
+	std::cout << "ìž…ë ¥ì´ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤." << "\n";
 	}
 }
 
