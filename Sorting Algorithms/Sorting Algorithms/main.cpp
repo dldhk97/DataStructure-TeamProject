@@ -1,4 +1,5 @@
 #include "SortManager.h"
+#include "IOManager.h"
 #include "Sort.h"
 
 int main()
@@ -7,9 +8,14 @@ int main()
 	SortManager sm;
 
 	std::vector<int> intArr;
+	std::vector<double> doubleArr;
 	std::vector<std::string> strArr;
 	std::vector<Rectangle> recArr;
 	int userInput;
+
+	iom.FileReader<int>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\int - 10000.txt", intArr);
+	iom.FileReader<std::string>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\string - 10000.txt", strArr);
+	iom.FileReader<Rectangle>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\rectangle - 10000.txt", recArr);
 
 	while (1)
 	{

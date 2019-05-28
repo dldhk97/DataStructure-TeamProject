@@ -10,6 +10,15 @@ Rectangle::Rectangle(double width, double height)
 	this->height = height;
 }
 
+Rectangle::Rectangle(std::string input)
+{
+	auto width = input.substr(0, input.find(' '));
+	auto height = input.substr(input.find(' ') + 1, input.size());
+
+	this->width = std::stod(width);
+	this->height = std::stod(height);
+}
+
 double Rectangle::getArea() const
 {
 	return this->width * this->height;

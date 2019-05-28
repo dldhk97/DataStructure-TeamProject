@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 #include <iostream>
 
 class Rectangle
@@ -9,6 +9,7 @@ private:
 public:
 	Rectangle();
 	Rectangle(double width, double height);
+	Rectangle(std::string input);
 
 	double getArea() const;
 

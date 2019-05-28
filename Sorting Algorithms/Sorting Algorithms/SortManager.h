@@ -2,7 +2,6 @@
 #include <vector>
 #include <random>
 #include <ctime>
-#include "IOManager.h"
 #include "Rectangle.h"
 
 enum SortType { BUBBLE = 1, SELECTION, INSERTION, INSERTION_LIST, MERGE_RECURSIVE, MERGE_NON_RECURSIVE, MERGE_NATURAL, SHELL, HEAP, QUICK_RECURSIVE_FIRST, QUICK_RECURSIVE_MEDIAN, QUICK_NON_RECURSIVE, RADIX, STANDARD };
