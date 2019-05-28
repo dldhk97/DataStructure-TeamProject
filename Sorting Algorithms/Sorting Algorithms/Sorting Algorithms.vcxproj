@@ -156,6 +156,7 @@
     <ClInclude Include="MergeSort.h" />
     <ClInclude Include="QuickSort.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="SelectionSort.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="SortManager.h" />
     <ClInclude Include="ShellSort.h" />
