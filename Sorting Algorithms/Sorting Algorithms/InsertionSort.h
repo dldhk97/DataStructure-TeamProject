@@ -1,6 +1,6 @@
 #pragma once
 #include "Sort.h"
-
+#include <list>
 namespace sorts
 {
 	template <typename dataType>
@@ -16,18 +16,25 @@ namespace sorts
 				j--;
 			}
 		}
-		//auto begin_iter = std::begin(arr);
-		//auto end_iter = std::end(arr);
+	}
 
-		//for (auto i = begin_iter; i != end_iter; ++i)
-		//{
-		//	if (i == begin_iter)
-		//		continue;
-
-		//	for (auto j = i; *--j > *j;)
-		//	{
-		//		std::swap(*j, *i);
-		//	}
-		//}
+	template <typename dataType>
+	void insertionSort_list(std::vector<dataType>& dataArr)
+	{
+		std::list<dataType> temp;
+		for (int i = 0; i < dataArr.size(); i++)
+		{
+			temp.push_front(dataArr[i]);
+		}
+		int j;
+		for (int i = 0; i < dataArr.size(); i++)
+		{
+			j = i;
+			while (j > 0 && dataArr[j - 1] > dataArr[j])
+			{
+				std::swap(dataArr[j - 1], dataArr[j]);
+				j--;
+			}
+		}
 	}
 }
