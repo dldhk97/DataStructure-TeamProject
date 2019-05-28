@@ -1,5 +1,6 @@
 #pragma once
 #include "Sort.h"
+#include "Stack.h"
 
 namespace sorts
 {
@@ -121,8 +122,85 @@ namespace sorts
 	}
 
 	template <typename dataType>
-	void nonRecursiveQuickSort(std::vector<dataType>& dataArr, int pivot)
+	void nonRecursiveQuickSort(std::vector<dataType>& dataArr, const int size) 
 	{
+		Stack<int> stk;
+		dataType temp;
+		dataType pivot;
+		int left, right, median;
+		int i, j;
 
+		left = 0;
+		right = size - 1;
+		median = left + (right - left) / 2;
+
+		stk.push(right); stk.push(left);
+		while (!stk.isEmpty()) 
+		{
+			left = stk.peek();
+			stk.pop();
+			right = stk.peek();
+			stk.pop();
+
+			while (left < right) 
+			{
+				median = left + (right - left) / 2;
+
+				sorts::sort_of_three_key(dataArr, left, median, right);
+				pivot = dataArr[median];
+				dataArr[median] = dataArr[left];
+				dataArr[left] = pivot;
+
+				i = left;
+				j = right + 1;
+
+				while (true) 
+				{
+					while (dataArr[++i] < pivot);
+					while (pivot < dataArr[--j]);
+
+					if (j <= i)
+						break;
+
+					temp = dataArr[i];
+					dataArr[i] = dataArr[j];
+					dataArr[j] = temp;
+				}
+
+				dataArr[left] = dataArr[j];
+				dataArr[j] = pivot;
+
+				if (i < right) 
+				{
+					stk.push(right);
+					stk.push(i);
+				}
+				right = j - 1;
+			}
+		}
+	}
+
+	template <typename dataType>
+	void sort_of_three_key(std::vector<dataType> dataArr, int left, int middle, int right) 
+	{
+		dataType temp;
+		if (dataArr[left] > dataArr[middle])
+		{
+			temp = dataArr[left];
+			dataArr[left] = dataArr[middle];
+			dataArr[middle] = temp;
+		}
+		if (dataArr[middle] > dataArr[right])
+		{
+			temp = dataArr[middle];
+			dataArr[middle] = dataArr[right];
+			dataArr[right] = temp;
+		}
+		if (dataArr[left] > dataArr[middle])
+		{
+			temp = dataArr[left];
+			dataArr[left] = dataArr[middle];
+			dataArr[middle] = temp;
+		}
 	}
 }

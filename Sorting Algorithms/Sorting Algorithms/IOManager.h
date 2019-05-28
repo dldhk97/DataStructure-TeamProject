@@ -8,12 +8,12 @@
 class IOManager
 {
 public:
-	template<typename T> void FileReader(std::string file_path, std::vector<T>& result);
-	template<typename T> void FileReader(std::string file_path, std::vector<T>& result, std::function<T(std::string)> fn);
+	template<typename dataType> void FileReader(std::string file_path, std::vector<dataType>& result);
+	template<typename dataType> void FileReader(std::string file_path, std::vector<dataType>& result, std::function<dataType(std::string)> fn);
 };
 
-template<typename T>
-inline void IOManager::FileReader(std::string file_path, std::vector<T>& result)
+template<typename dataType>
+inline void IOManager::FileReader(std::string file_path, std::vector<dataType>& result)
 {
 	std::ifstream stringReader(file_path);
 	std::string readed;
@@ -22,13 +22,13 @@ inline void IOManager::FileReader(std::string file_path, std::vector<T>& result)
 		std::getline(stringReader, readed, '\n');
 		if (readed != "")
 		{
-			result.push_back(T(readed));
+			result.push_back(dataType(readed));
 		}
 	}
 }
 
-template<typename T>
-inline void IOManager::FileReader(std::string file_path, std::vector<T>& result, std::function<T(std::string)> fn)
+template<typename dataType>
+inline void IOManager::FileReader(std::string file_path, std::vector<dataType>& result, std::function<dataType(std::string)> fn)
 {
 	std::ifstream stringReader(file_path);
 	std::string readed;
