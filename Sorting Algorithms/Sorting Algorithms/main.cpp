@@ -4,86 +4,102 @@
 #include "Sort.h"
 #include "Rectangle.h"
 
+template<typename T, typename fn> void timer(std::vector<std::pair<std::string, clock_t>>& stopwatch, std::string function_name, fn function, const T& input);
+
 int main()
 {
 	IOManager iom;
-
+	std::vector<std::pair<std::string, clock_t>> stopwatch;
 	std::vector<int> intArr;
 	std::vector<double> doubleArr;
 	std::vector<std::string> strArr;
 	std::vector<Rectangle> recArr;
-	
+
 	auto stoi = [](std::string input)->int {return std::stoi(input); };
 	auto stod = [](std::string input)->double {return std::stod(input); };
 
-	iom.FileReader<int>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\Debug\\int - 10.txt", intArr, stoi);
-	iom.FileReader<double>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\Debug\\double - 10.txt", doubleArr, stod);
-	iom.FileReader<std::string>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\Debug\\string - 10.txt", strArr);
-	iom.FileReader<Rectangle>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\Debug\\rectangle - 10.txt", recArr);
+	iom.FileReader<int>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\int - 10.txt", intArr, stoi);
+	iom.FileReader<double>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\double - 10.txt", doubleArr, stod);
+	iom.FileReader<std::string>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\string - 10.txt", strArr);
+	iom.FileReader<Rectangle>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\rectangle - 10.txt", recArr);
 
-	sorts::bubbleSort(intArr);
-	sorts::bubbleSort(doubleArr);
-	sorts::bubbleSort(strArr);
-	sorts::bubbleSort(recArr);
+	timer(stopwatch, "sorts::bubbleSort(intArr)", sorts::bubbleSort<int>, intArr);
+	timer(stopwatch, "sorts::bubbleSort(doubleArr)", sorts::bubbleSort<double>, doubleArr);
+	timer(stopwatch, "sorts::bubbleSort(strArr)", sorts::bubbleSort<std::string>, strArr);
+	timer(stopwatch, "sorts::bubbleSort(recArr)", sorts::bubbleSort<Rectangle>, recArr);
 
-	sorts::selectionSort(intArr);
-	sorts::selectionSort(doubleArr);
-	sorts::selectionSort(strArr);
-	sorts::selectionSort(recArr);
+	timer(stopwatch, "sorts::selectionSort(intArr)", sorts::selectionSort<std::vector<int>>, intArr);
+	timer(stopwatch, "sorts::selectionSort(doubleArr)", sorts::selectionSort<std::vector<double>>, doubleArr);
+	timer(stopwatch, "sorts::selectionSort(strArr)", sorts::selectionSort<std::vector<std::string>>, strArr);
+	timer(stopwatch, "sorts::selectionSort(recArr)", sorts::selectionSort<std::vector<Rectangle>>, recArr);
 
-	sorts::insertionSort(intArr);
-	sorts::insertionSort(doubleArr);
-	sorts::insertionSort(strArr);
-	sorts::insertionSort(recArr);
+	timer(stopwatch, "sorts::insertionSort(intArr)", sorts::insertionSort<int>, intArr);
+	timer(stopwatch, "sorts::insertionSort(doubleArr)", sorts::insertionSort<double>, doubleArr);
+	timer(stopwatch, "sorts::insertionSort(strArr)", sorts::insertionSort<std::string>, strArr);
+	timer(stopwatch, "sorts::insertionSort(recArr)", sorts::insertionSort<Rectangle>, recArr);
 
-	sorts::insertionSort_list(intArr);
-	sorts::insertionSort_list(doubleArr);
-	sorts::insertionSort_list(strArr);
-	sorts::insertionSort_list(recArr);
+	timer(stopwatch, "sorts::insertionSort_list(intArr)", sorts::insertionSort_list<int>, intArr);
+	timer(stopwatch, "sorts::insertionSort_list(doubleArr)", sorts::insertionSort_list<double>, doubleArr);
+	timer(stopwatch, "sorts::insertionSort_list(strArr)", sorts::insertionSort_list<std::string>, strArr);
+	timer(stopwatch, "sorts::insertionSort_list(recArr)", sorts::insertionSort_list<Rectangle>, recArr);
 
-	sorts::mergeSort(intArr);
-	sorts::mergeSort(doubleArr);
-	sorts::mergeSort(strArr);
-	sorts::mergeSort(recArr);
+	timer(stopwatch, "sorts::mergeSort(intArr)", sorts::mergeSort<std::vector <int>>, intArr);
+	timer(stopwatch, "sorts::mergeSort(doubleArr)", sorts::mergeSort<std::vector <double>>, doubleArr);
+	timer(stopwatch, "sorts::mergeSort(strArr)", sorts::mergeSort<std::vector <std::string>>, strArr);
+	timer(stopwatch, "sorts::mergeSort(recArr)", sorts::mergeSort<std::vector <Rectangle>>, recArr);
 
-	sorts::nonRecursiveMergeSort(intArr);
-	sorts::nonRecursiveMergeSort(doubleArr);
-	sorts::nonRecursiveMergeSort(strArr);
-	sorts::nonRecursiveMergeSort(recArr);
+	timer(stopwatch, "sorts::nonRecursiveMergeSort(intArr)", sorts::nonRecursiveMergeSort<int>, intArr);
+	timer(stopwatch, "sorts::nonRecursiveMergeSort(doubleArr)", sorts::nonRecursiveMergeSort<double>, doubleArr);
+	timer(stopwatch, "sorts::nonRecursiveMergeSort(strArr)", sorts::nonRecursiveMergeSort<std::string>, strArr);
+	timer(stopwatch, "sorts::nonRecursiveMergeSort(recArr)", sorts::nonRecursiveMergeSort<Rectangle>, recArr);
 
 	//sorts::mergeSort_natural(intArr);
 	//sorts::mergeSort_natural(doubleArr);
 	//sorts::mergeSort_natural(strArr);
 	//sorts::mergeSort_natural(recArr);
 
-	sorts::shellSort(intArr);
-	sorts::shellSort(doubleArr);
-	sorts::shellSort(strArr);
-	sorts::shellSort(recArr);
+	timer(stopwatch, "sorts::shellSort(intArr)", sorts::shellSort<int>, intArr);
+	timer(stopwatch, "sorts::shellSort(doubleArr)", sorts::shellSort<double>, doubleArr);
+	timer(stopwatch, "sorts::shellSort(strArr)", sorts::shellSort<std::string>, strArr);
+	timer(stopwatch, "sorts::shellSort(recArr)", sorts::shellSort<Rectangle>, recArr);
 
-	sorts::heapSort(intArr);
-	sorts::heapSort(doubleArr);
-	sorts::heapSort(strArr);
-	sorts::heapSort(recArr);
+	timer(stopwatch, "sorts::heapSort(intArr)", sorts::heapSort<int>, intArr);
+	timer(stopwatch, "sorts::heapSort(doubleArr)", sorts::heapSort<double>, doubleArr);
+	timer(stopwatch, "sorts::heapSort(strArr)", sorts::heapSort<std::string>, strArr);
+	timer(stopwatch, "sorts::heapSort(recArr)", sorts::heapSort<Rectangle>, recArr);
 
-	sorts::recursiveQuickSort(intArr);
-	sorts::recursiveQuickSort(doubleArr);
-	sorts::recursiveQuickSort(strArr);
-	sorts::recursiveQuickSort(recArr);
+	timer(stopwatch, "sorts::recursiveQuickSort(intArr)", sorts::recursiveQuickSort<int>, intArr);
+	timer(stopwatch, "sorts::recursiveQuickSort(doubleArr)", sorts::recursiveQuickSort<double>, doubleArr);
+	timer(stopwatch, "sorts::recursiveQuickSort(strArr)", sorts::recursiveQuickSort<std::string>, strArr);
+	timer(stopwatch, "sorts::recursiveQuickSort(recArr)", sorts::recursiveQuickSort<Rectangle>, recArr);
 
-	sorts::recursiveQuickSort_median(intArr);
-	sorts::recursiveQuickSort_median(doubleArr);
-	sorts::recursiveQuickSort_median(strArr);
-	sorts::recursiveQuickSort_median(recArr);
+	timer(stopwatch, "sorts::recursiveQuickSort_median(intArr)", sorts::recursiveQuickSort_median<int>, intArr);
+	timer(stopwatch, "sorts::recursiveQuickSort_median(doubleArr)", sorts::recursiveQuickSort_median<double>, doubleArr);
+	timer(stopwatch, "sorts::recursiveQuickSort_median(strArr)", sorts::recursiveQuickSort_median<std::string>, strArr);
+	timer(stopwatch, "sorts::recursiveQuickSort_median(recArr)", sorts::recursiveQuickSort_median<Rectangle>, recArr);
 
-	sorts::nonRecursiveQuickSort(intArr);
-	sorts::nonRecursiveQuickSort(doubleArr);
-	sorts::nonRecursiveQuickSort(strArr);
-	sorts::nonRecursiveQuickSort(recArr);
+	timer(stopwatch, "sorts::nonRecursiveQuickSort(intArr)", sorts::nonRecursiveQuickSort<int>, intArr);
+	timer(stopwatch, "sorts::nonRecursiveQuickSort(doubleArr)", sorts::nonRecursiveQuickSort<double>, doubleArr);
+	timer(stopwatch, "sorts::nonRecursiveQuickSort(strArr)", sorts::nonRecursiveQuickSort<std::string>, strArr);
+	timer(stopwatch, "sorts::nonRecursiveQuickSort(recArr)", sorts::nonRecursiveQuickSort<Rectangle>, recArr);
 
-	sorts::radixSort10(intArr);
-	sorts::radixSort16(intArr);
-	sorts::radixSortMasking(intArr);
+	timer(stopwatch, "sorts::radixSort10(intArr)", sorts::radixSort10, intArr);
+	timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
+	timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
+
+	for (auto i : stopwatch)
+		std::cout << i.first << '\t' << i.second << " ms" << std::endl;
 
 	return 0;
+}
+
+template<typename T, typename fn>
+void timer(std::vector<std::pair<std::string, clock_t>>& stopwatch, std::string function_name, fn function, const T& input)
+{
+	T temp(input);
+	//std::copy(std::begin(input), std::end(input), temp);
+	auto start = clock();
+	function(temp);
+	auto stop = clock();
+	stopwatch.push_back(std::make_pair(function_name, stop - start));
 }
