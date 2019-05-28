@@ -76,10 +76,10 @@ int main()
 	sorts::recursiveQuickSort_median(strArr, 0, strArr.size() - 1);
 	sorts::recursiveQuickSort_median(recArr, 0, recArr.size() - 1);
 
-	//sorts::recursiveQuickSort_non_recursive(intArr, 0, intArr.size() - 1);
-	//sorts::recursiveQuickSort_non_recursive(doubleArr, 0, doubleArr.size() - 1);
-	//sorts::recursiveQuickSort_non_recursive(strArr, 0, strArr.size() - 1);
-	//sorts::recursiveQuickSort_non_recursive(recArr, 0, recArr.size() - 1);
+	sorts::nonRecursiveQuickSort(intArr, intArr.size());
+	sorts::nonRecursiveQuickSort(doubleArr, doubleArr.size());
+	sorts::nonRecursiveQuickSort(strArr, strArr.size());
+	sorts::nonRecursiveQuickSort(recArr, recArr.size());
 
 	sorts::radixSort10(intArr);
 	sorts::radixSort16(intArr);
