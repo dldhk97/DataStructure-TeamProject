@@ -16,5 +16,18 @@ namespace sorts
 				j--;
 			}
 		}
+		//auto begin_iter = std::begin(arr);
+		//auto end_iter = std::end(arr);
+
+		//for (auto i = begin_iter; i != end_iter; ++i)
+		//{
+		//	if (i == begin_iter)
+		//		continue;
+
+		//	for (auto j = i; *--j > *j;)
+		//	{
+		//		std::swap(*j, *i);
+		//	}
+		//}
 	}
 }
