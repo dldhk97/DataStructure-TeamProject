@@ -30,11 +30,11 @@ int IOManager::getSortType()
 		std::cout << "1. 버블 정렬" << "\n";
 		std::cout << "2. 삽입 정렬" << "\n";
 		std::cout << "3. 병합 정렬" << "\n";
-		std::cout << "4. 퀵 정렬" << "\n";
+		std::cout << "4. 쉘 정렬" << "\n";
 		std::cout << "=====================" << "\n";
 		userInput = getInt("입력 :");
 
-		if (BUBBLE <= userInput && userInput <= MERGE)
+		if (BUBBLE <= userInput && userInput <= SHELL)
 			return userInput;
 		std::cout << "입력이 잘못되었습니다." << "\n";
 	}
