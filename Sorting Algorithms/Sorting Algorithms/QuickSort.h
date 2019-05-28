@@ -138,7 +138,6 @@ namespace sorts
 	{
 		const int size = dataArr.size();
 		Stack<int> stk;
-		dataType temp;
 		dataType pivot;
 		int left, right, median;
 		int i, j;
@@ -169,15 +168,12 @@ namespace sorts
 
 				while (true) 
 				{
-					while (dataArr[++i] < pivot);
+					while (dataArr[++i] < pivot && i < dataArr.size() - 1);
 					while (pivot < dataArr[--j]);
 
 					if (j <= i)
 						break;
-
-					temp = dataArr[i];
-					dataArr[i] = dataArr[j];
-					dataArr[j] = temp;
+					std::swap(dataArr[i], dataArr[j]);
 				}
 
 				dataArr[left] = dataArr[j];
@@ -196,24 +192,17 @@ namespace sorts
 	template <typename dataType>
 	void sort_of_three_key(std::vector<dataType> dataArr, int left, int middle, int right) 
 	{
-		dataType temp;
 		if (dataArr[left] > dataArr[middle])
 		{
-			temp = dataArr[left];
-			dataArr[left] = dataArr[middle];
-			dataArr[middle] = temp;
+			std::swap(dataArr[left], dataArr[middle]);
 		}
 		if (dataArr[middle] > dataArr[right])
 		{
-			temp = dataArr[middle];
-			dataArr[middle] = dataArr[right];
-			dataArr[right] = temp;
+			std::swap(dataArr[right], dataArr[middle]);
 		}
 		if (dataArr[left] > dataArr[middle])
 		{
-			temp = dataArr[left];
-			dataArr[left] = dataArr[middle];
-			dataArr[middle] = temp;
+			std::swap(dataArr[left], dataArr[middle]);
 		}
 	}
 }

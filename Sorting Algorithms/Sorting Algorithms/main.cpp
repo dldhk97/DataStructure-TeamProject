@@ -21,7 +21,7 @@ int main()
 	iom.FileReader<std::string>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\Debug\\string - 10.txt", strArr);
 	iom.FileReader<Rectangle>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\Debug\\rectangle - 10.txt", recArr);
 
-	sorts::bubbleSort(intArr);
+	/*sorts::bubbleSort(intArr);
 	sorts::bubbleSort(doubleArr);
 	sorts::bubbleSort(strArr);
 	sorts::bubbleSort(recArr);
@@ -49,41 +49,46 @@ int main()
 	sorts::nonRecursiveMergeSort(intArr);
 	sorts::nonRecursiveMergeSort(doubleArr);
 	sorts::nonRecursiveMergeSort(strArr);
-	sorts::nonRecursiveMergeSort(recArr);
+	sorts::nonRecursiveMergeSort(recArr);*/
 
 	//sorts::mergeSort_natural(intArr);
 	//sorts::mergeSort_natural(doubleArr);
 	//sorts::mergeSort_natural(strArr);
 	//sorts::mergeSort_natural(recArr);
 
-	sorts::shellSort(intArr);
-	sorts::shellSort(doubleArr);
-	sorts::shellSort(strArr);
-	sorts::shellSort(recArr);
+	//sorts::shellSort(intArr);
+	//sorts::shellSort(doubleArr);
+	//sorts::shellSort(strArr);
+	//sorts::shellSort(recArr);
 
-	sorts::heapSort(intArr);
-	sorts::heapSort(doubleArr);
-	sorts::heapSort(strArr);
-	sorts::heapSort(recArr);
+	//sorts::heapSort(intArr);
+	//sorts::heapSort(doubleArr);
+	//sorts::heapSort(strArr);
+	//sorts::heapSort(recArr);
 
-	sorts::recursiveQuickSort(intArr);
-	sorts::recursiveQuickSort(doubleArr);
-	sorts::recursiveQuickSort(strArr);
-	sorts::recursiveQuickSort(recArr);
+	//sorts::recursiveQuickSort(intArr);
+	//sorts::recursiveQuickSort(doubleArr);
+	//sorts::recursiveQuickSort(strArr);
+	//sorts::recursiveQuickSort(recArr);
 
-	sorts::recursiveQuickSort_median(intArr);
-	sorts::recursiveQuickSort_median(doubleArr);
-	sorts::recursiveQuickSort_median(strArr);
-	sorts::recursiveQuickSort_median(recArr);
+	//sorts::recursiveQuickSort_median(intArr);
+	//sorts::recursiveQuickSort_median(doubleArr);
+	//sorts::recursiveQuickSort_median(strArr);
+	//sorts::recursiveQuickSort_median(recArr);
 
 	sorts::nonRecursiveQuickSort(intArr);
 	sorts::nonRecursiveQuickSort(doubleArr);
 	sorts::nonRecursiveQuickSort(strArr);
 	sorts::nonRecursiveQuickSort(recArr);
 
-	sorts::radixSort10(intArr);
-	sorts::radixSort16(intArr);
-	sorts::radixSortMasking(intArr);
+	sorts::displayArr(intArr);
+	sorts::displayArr(doubleArr);
+	sorts::displayArr(strArr);
+	sorts::displayArr(recArr);
+
+	//sorts::radixSort10(intArr);
+	//sorts::radixSort16(intArr);
+	//sorts::radixSortMasking(intArr);
 
 	return 0;
 }
