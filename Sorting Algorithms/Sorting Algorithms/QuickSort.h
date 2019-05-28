@@ -108,7 +108,7 @@ namespace sorts
 	template <typename dataType>
 	void recursiveQuickSort_median(std::vector<dataType>& dataArr)
 	{
-		recursiveQuickSort_median_(dataArr, 0, dataArr.size() - 1)
+		recursiveQuickSort_median_(dataArr, 0, dataArr.size() - 1);
 	}
 	
 	template <typename dataType>
