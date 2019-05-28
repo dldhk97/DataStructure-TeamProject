@@ -18,8 +18,24 @@ public:
 	int getInt(std::string message);
 
 	void displayMessage(std::string message);
-	template<typename T> void FileReader(std::string file_path, std::vector<T>& result, std::function<T(std::string)> fn = nullptr);
+	template<typename T> void FileReader(std::string file_path, std::vector<T>& result);
+	template<typename T> void FileReader(std::string file_path, std::vector<T>& result, std::function<T(std::string)> fn);
 };
+
+template<typename T>
+inline void IOManager::FileReader(std::string file_path, std::vector<T>& result)
+{
+	std::ifstream stringReader(file_path);
+	std::string readed;
+	while (!stringReader.eof())
+	{
+		std::getline(stringReader, readed, '\n');
+		if (readed != "")
+		{
+			result.push_back(T(readed));
+		}
+	}
+}
 
 template<typename T>
 inline void IOManager::FileReader(std::string file_path, std::vector<T>& result, std::function<T(std::string)> fn)
@@ -33,8 +49,8 @@ inline void IOManager::FileReader(std::string file_path, std::vector<T>& result,
 		{
 			if (fn)
 				result.push_back(fn(readed));
-			else
-				result.push_back(T(readed));
+			//else
+			//	result.push_back(T(readed));
 		}
 	}
 }
