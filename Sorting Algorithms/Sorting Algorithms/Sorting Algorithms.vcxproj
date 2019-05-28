@@ -161,6 +161,7 @@
     <ClInclude Include="SelectionSort.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="ShellSort.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

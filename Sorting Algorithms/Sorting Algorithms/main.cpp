@@ -37,25 +37,25 @@ int main()
 	sorts::insertionSort(strArr);
 	sorts::insertionSort(recArr);
 
-	//sorts::insertionSort_list(intArr);
-	//sorts::insertionSort_list(doubleArr);
-	//sorts::insertionSort_list(strArr);
-	//sorts::insertionSort_list(recArr);
+	/*sorts::insertionSort_list(intArr);
+	sorts::insertionSort_list(doubleArr);
+	sorts::insertionSort_list(strArr);
+	sorts::insertionSort_list(recArr);*/
 
 	sorts::mergeSort(intArr);
 	sorts::mergeSort(doubleArr);
 	sorts::mergeSort(strArr);
 	sorts::mergeSort(recArr);
 
-	//sorts::mergeSort_non_recursive(intArr);
-	//sorts::mergeSort_non_recursive(doubleArr);
-	//sorts::mergeSort_non_recursive(strArr);
-	//sorts::mergeSort_non_recursive(recArr);
+	/*sorts::mergeSort_non_recursive(intArr);
+	sorts::mergeSort_non_recursive(doubleArr);
+	sorts::mergeSort_non_recursive(strArr);
+	sorts::mergeSort_non_recursive(recArr);
 
-	//sorts::mergeSort_natural(intArr);
-	//sorts::mergeSort_natural(doubleArr);
-	//sorts::mergeSort_natural(strArr);
-	//sorts::mergeSort_natural(recArr);
+	sorts::mergeSort_natural(intArr);
+	sorts::mergeSort_natural(doubleArr);
+	sorts::mergeSort_natural(strArr);
+	sorts::mergeSort_natural(recArr);*/
 
 	sorts::shellSort(intArr);
 	sorts::shellSort(doubleArr);
@@ -77,10 +77,10 @@ int main()
 	sorts::recursiveQuickSort_median(strArr, 0, strArr.size() - 1);
 	sorts::recursiveQuickSort_median(recArr, 0, recArr.size() - 1);
 
-	//sorts::recursiveQuickSort_non_recursive(intArr, 0, intArr.size() - 1);
-	//sorts::recursiveQuickSort_non_recursive(doubleArr, 0, doubleArr.size() - 1);
-	//sorts::recursiveQuickSort_non_recursive(strArr, 0, strArr.size() - 1);
-	//sorts::recursiveQuickSort_non_recursive(recArr, 0, recArr.size() - 1);
+	sorts::nonRecursiveQuickSort(intArr, intArr.size());
+	sorts::nonRecursiveQuickSort(doubleArr, doubleArr.size());
+	sorts::nonRecursiveQuickSort(strArr, strArr.size());
+	sorts::nonRecursiveQuickSort(recArr, recArr.size());
 
 	sorts::radixSort10(intArr);
 	sorts::radixSort16(intArr);
