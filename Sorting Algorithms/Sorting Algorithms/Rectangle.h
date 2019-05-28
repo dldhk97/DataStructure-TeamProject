@@ -13,7 +13,10 @@ public:
 	double getArea() const;
 
 	bool operator> (const Rectangle& T) const;
+	bool operator>= (const Rectangle& T) const;
 	bool operator< (const Rectangle& T) const;
+	bool operator<= (const Rectangle& T) const;
+
 	friend std::ostream& operator<<(std::ostream& os, const Rectangle& rec);
 };
 

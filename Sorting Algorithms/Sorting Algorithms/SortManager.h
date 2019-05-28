@@ -5,7 +5,7 @@
 #include "IOManager.h"
 #include "Rectangle.h"
 
-enum SortType { BUBBLE = 1, INSERTION, MERGE, SELECTION };
+enum SortType { BUBBLE = 1, INSERTION, MERGE, SHELL };
 
 const int dataCapacity = 10;
 
@@ -40,8 +40,8 @@ void SortManager::sort(int sortType, std::vector<dataType>& arr)
 	case MERGE:
 		sorts::mergeSort(arr);
 		break;
-	case SELECTION:
-		sorts::selectionSort(arr);
+	case SHELL:
+		sorts::shellSort(arr);
 		break;
 	default:
 		//debug

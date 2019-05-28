@@ -2,7 +2,7 @@
 
 
 //문자열을 랜덤으로 생성하여 삽입.
-void SortManager::insertRandom(std::vector<std::string>& recArr)
+void SortManager::insertRandom(std::vector<std::string>& strArr)
 {
 	srand((unsigned int)time(NULL));
 	for (int i = 0; i < dataCapacity; i++)
@@ -10,7 +10,7 @@ void SortManager::insertRandom(std::vector<std::string>& recArr)
 		char s[11];
 		int length = 10;			//문자열의 길이도 난수로 하고 싶으면 rand() % 100으로 대체할 것.
 		genRandStr(s, length);
-		recArr.push_back(s);
+		strArr.push_back(s);
 	}
 }
 
