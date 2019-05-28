@@ -40,6 +40,12 @@ bool Rectangle::operator<=(const Rectangle& T) const
 {
 	return this->getArea() <= T.getArea() ? true : false;
 }
+Rectangle& Rectangle::operator=(const Rectangle& T)
+{
+	this->width = T.width;
+	this->height = T.height;
+	return *this;
+}
 
 std::ostream& operator<<(std::ostream& os, const Rectangle& rec)
 {
