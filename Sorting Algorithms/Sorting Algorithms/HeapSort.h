@@ -1,7 +1,6 @@
 #pragma once
 #include "Sort.h"
 
-
 namespace sorts
 {
 	int parent(int a)

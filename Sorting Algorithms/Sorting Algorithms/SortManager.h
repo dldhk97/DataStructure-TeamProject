@@ -35,24 +35,26 @@ void SortManager::sort(int sortType, std::vector<dataType>& arr)
 		sorts::bubbleSort(arr);
 		break;
 	case SELECTION:
-		sorts::insertionSort(arr);
+		sorts::selectionSort(arr);
 		break;
 	case INSERTION:
-		sorts::mergeSort(arr);
+		sorts::insertionSort(arr);
 		break;
 	case INSERTION_LIST:
-		sorts::shellSort(arr);
+		sorts::insertionSort(arr);
 		break;
 	case MERGE_RECURSIVE:
-		sorts::heapSort(arr);
+		sorts::mergeSort(arr);
 		break;
 	case MERGE_NON_RECURSIVE:
 		break;
 	case MERGE_NATURAL:
 		break;
 	case SHELL:
+		sorts::shellSort(arr);
 		break;
 	case HEAP:
+		sorts::heapSort(arr);
 		break;
 	case QUICK_RECURSIVE_FIRST:
 		break;
