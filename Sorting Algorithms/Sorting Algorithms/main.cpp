@@ -12,8 +12,11 @@ int main()
 	std::vector<std::string> strArr;
 	std::vector<Rectangle> recArr;
 	int userInput;
+	auto stoi = [](std::string input)->int {return std::stoi(input); };
+	auto stod = [](std::string input)->double {return std::stod(input); };
 
-	iom.FileReader<int>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\int - 10000.txt", intArr);
+	iom.FileReader<int>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\int - 10000.txt", intArr, stoi);
+	iom.FileReader<double>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\double - 10000.txt", doubleArr, stod);
 	iom.FileReader<std::string>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\string - 10000.txt", strArr);
 	iom.FileReader<Rectangle>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\rectangle - 10000.txt", recArr);
 
