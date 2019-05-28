@@ -31,10 +31,11 @@ int IOManager::getSortType()
 		std::cout << "2. 삽입 정렬" << "\n";
 		std::cout << "3. 병합 정렬" << "\n";
 		std::cout << "4. 쉘 정렬" << "\n";
+		std::cout << "5. 힙 정렬" << "\n";
 		std::cout << "=====================" << "\n";
 		userInput = getInt("입력 :");
 
-		if (BUBBLE <= userInput && userInput <= SHELL)
+		if (BUBBLE <= userInput && userInput <= HEAP)
 			return userInput;
 		std::cout << "입력이 잘못되었습니다." << "\n";
 	}
