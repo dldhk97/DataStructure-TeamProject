@@ -39,7 +39,7 @@
 
 ### 정렬 과제 – 프로그래밍(1)
 * **아래 각 정렬 방식에 대해서**
-  * 삽입정렬, ~~이원삽입정렬,~~ 연결삽입정렬, 쉘정렬(shell size는 각팀에서 결정)
+  *  insertion sort, linked list를 이용한 insertion sort, shell sort(shell size는 각팀에서 결정)
   * 첫번째 값을 pivot으로 삼는 recursive quick sort
   median of three를 pivot으로 삼는 recursive quick sort,
   median of three를 pivot으로 삼는 non-recursive quick sort(직접 stack을 구현하여 sort)
