@@ -14,18 +14,18 @@ namespace sorts
 				maxNumber = a[i];
 		}
 		int exp = 1;
-		int* tmpBuffer = new int[n];
+		int* tempBuffer = new int[n];
 		while (maxNumber / exp > 0)
 		{
-			int decimalBucket[10] = { 0 };
+			int Bucket[10] = { 0 };
 			for (i = 0; i < n; i++)
-				decimalBucket[a[i] / exp % 10]++;
+				Bucket[a[i] / exp % 10]++;
 			for (i = 1; i < 10; i++)
-				decimalBucket[i] += decimalBucket[i - 1];
+				Bucket[i] += Bucket[i - 1];
 			for (i = n - 1; i >= 0; i--)
-				tmpBuffer[--decimalBucket[a[i] / exp % 10]] = a[i];
+				tempBuffer[--Bucket[a[i] / exp % 10]] = a[i];
 			for (i = 0; i < n; i++)
-				a[i] = tmpBuffer[i];
+				a[i] = tempBuffer[i];
 
 			exp *= 10;
 		}
