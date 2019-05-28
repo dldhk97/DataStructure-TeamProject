@@ -5,7 +5,7 @@
 namespace sorts
 {
 	template <typename dataType>
-	void recursiveQuickSort(std::vector<dataType>& dataArr, int start, int end)
+	void recursiveQuickSort_(std::vector<dataType>& dataArr, int start, int end)
 	{
 		if (start >= end)
 		{
@@ -46,12 +46,18 @@ namespace sorts
 			}
 		}
 		// 분할 계산
-		recursiveQuickSort(dataArr, start, j - 1);
-		recursiveQuickSort(dataArr, j + 1, end);
+		recursiveQuickSort_(dataArr, start, j - 1);
+		recursiveQuickSort_(dataArr, j + 1, end);
 	}
 
 	template <typename dataType>
-	void recursiveQuickSort_median(std::vector<dataType>& dataArr, int start, int end)
+	void recursiveQuickSort(std::vector<dataType>& dataArr)
+	{
+		recursiveQuickSort_(dataArr, 0, dataArr.size() - 1);
+	}
+
+	template <typename dataType>
+	void recursiveQuickSort_median_(std::vector<dataType>& dataArr, int start, int end)
 	{
 		if (start >= end)
 		{
@@ -95,8 +101,14 @@ namespace sorts
 			}
 		}
 		// 분할 계산
-		recursiveQuickSort(dataArr, start, j - 1);
-		recursiveQuickSort(dataArr, j + 1, end);
+		recursiveQuickSort_(dataArr, start, j - 1);
+		recursiveQuickSort_(dataArr, j + 1, end);
+	}
+
+	template <typename dataType>
+	void recursiveQuickSort_median(std::vector<dataType>& dataArr)
+	{
+		recursiveQuickSort_median_(dataArr, 0, dataArr.size() - 1)
 	}
 	
 	template <typename dataType>
@@ -122,8 +134,9 @@ namespace sorts
 	}
 
 	template <typename dataType>
-	void nonRecursiveQuickSort(std::vector<dataType>& dataArr, const int size) 
+	void nonRecursiveQuickSort(std::vector<dataType>& dataArr) 
 	{
+		const int size = dataArr.size();
 		Stack<int> stk;
 		dataType temp;
 		dataType pivot;

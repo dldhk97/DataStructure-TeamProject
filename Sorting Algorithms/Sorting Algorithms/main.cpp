@@ -46,10 +46,10 @@ int main()
 	sorts::mergeSort(strArr);
 	sorts::mergeSort(recArr);
 
-	sorts::nonRecursiveMergeSort(intArr, intArr.size());
-	sorts::nonRecursiveMergeSort(doubleArr, doubleArr.size());
-	sorts::nonRecursiveMergeSort(strArr, strArr.size());
-	sorts::nonRecursiveMergeSort(recArr, recArr.size());
+	sorts::nonRecursiveMergeSort(intArr);
+	sorts::nonRecursiveMergeSort(doubleArr);
+	sorts::nonRecursiveMergeSort(strArr);
+	sorts::nonRecursiveMergeSort(recArr);
 
 	//sorts::mergeSort_natural(intArr);
 	//sorts::mergeSort_natural(doubleArr);
@@ -66,20 +66,20 @@ int main()
 	sorts::heapSort(strArr);
 	sorts::heapSort(recArr);
 
-	sorts::recursiveQuickSort(intArr, 0, intArr.size() - 1);
-	sorts::recursiveQuickSort(doubleArr, 0, doubleArr.size() - 1);
-	sorts::recursiveQuickSort(strArr, 0, strArr.size() - 1);
-	sorts::recursiveQuickSort(recArr, 0, recArr.size() - 1);
+	sorts::recursiveQuickSort(intArr);
+	sorts::recursiveQuickSort(doubleArr);
+	sorts::recursiveQuickSort(strArr);
+	sorts::recursiveQuickSort(recArr);
 
-	sorts::recursiveQuickSort_median(intArr, 0, intArr.size() - 1);
-	sorts::recursiveQuickSort_median(doubleArr, 0, doubleArr.size() - 1);
-	sorts::recursiveQuickSort_median(strArr, 0, strArr.size() - 1);
-	sorts::recursiveQuickSort_median(recArr, 0, recArr.size() - 1);
+	sorts::recursiveQuickSort_median(intArr);
+	sorts::recursiveQuickSort_median(doubleArr);
+	sorts::recursiveQuickSort_median(strArr);
+	sorts::recursiveQuickSort_median(recArr);
 
-	sorts::nonRecursiveQuickSort(intArr, intArr.size());
-	sorts::nonRecursiveQuickSort(doubleArr, doubleArr.size());
-	sorts::nonRecursiveQuickSort(strArr, strArr.size());
-	sorts::nonRecursiveQuickSort(recArr, recArr.size());
+	sorts::nonRecursiveQuickSort(intArr);
+	sorts::nonRecursiveQuickSort(doubleArr);
+	sorts::nonRecursiveQuickSort(strArr);
+	sorts::nonRecursiveQuickSort(recArr);
 
 	sorts::radixSort10(intArr);
 	sorts::radixSort16(intArr);

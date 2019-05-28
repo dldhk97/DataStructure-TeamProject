@@ -5,7 +5,7 @@
 namespace sorts
 {
 	template<typename Iterator>
-	void mergeSort(Iterator begin, Iterator end, Iterator res)
+	void mergeSort_(Iterator begin, Iterator end, Iterator res)
 	{
 		auto merge = [](Iterator begin, Iterator middle, Iterator end, Iterator res)->void
 		{
@@ -24,8 +24,8 @@ namespace sorts
 		if (s > 1)
 		{
 			Iterator middle = begin + s / 2;
-			mergeSort(begin, middle, res);
-			mergeSort(middle, end, res);
+			mergeSort_(begin, middle, res);
+			mergeSort_(middle, end, res);
 			merge(begin, middle, end, res);
 		}
 	}
@@ -34,13 +34,14 @@ namespace sorts
 	void mergeSort(container& arr)
 	{
 		container temp(arr);
-		mergeSort(std::begin(arr), std::end(arr), std::begin(temp));
+		mergeSort_(std::begin(arr), std::end(arr), std::begin(temp));
 		std::copy(std::begin(temp), std::end(temp), std::begin(arr));
 	}
 
 	template <typename dataType>
-	void nonRecursiveMergeSort(std::vector<dataType>& dataArr, const int capacity)
+	void nonRecursiveMergeSort(std::vector<dataType>& dataArr)
 	{
+		int capacity = dataArr.size();
 		for (int n = 2; n / 4 < capacity / 2; n *= 2)
 		{
 			for (int i = 0; i < capacity; i += n)
