@@ -6,3 +6,4 @@
 #include "MergeSort.h"
 #include "SelectionSort.h"
 #include "ShellSort.h"
+#include "MergeSort.h"
