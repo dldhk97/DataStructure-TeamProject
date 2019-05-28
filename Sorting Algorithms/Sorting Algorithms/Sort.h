@@ -7,3 +7,6 @@
 #include "ShellSort.h"
 #include "HeapSort.h"
 #include "QuickSort.h"
+#include "RadixSort10.h"
+#include "RadixSort16.h"
+#include "RadixSortMasking.h"
