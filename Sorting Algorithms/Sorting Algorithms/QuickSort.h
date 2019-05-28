@@ -131,6 +131,7 @@ namespace sorts
 
 		if (dataArr[0] < dataArr[end] && dataArr[end] < dataArr[end / 2])
 			return end;
+		return start;
 	}
 
 	template <typename dataType>

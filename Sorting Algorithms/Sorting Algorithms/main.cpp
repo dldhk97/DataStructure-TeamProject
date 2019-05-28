@@ -18,10 +18,10 @@ int main()
 	auto stoi = [](std::string input)->int {return std::stoi(input); };
 	auto stod = [](std::string input)->double {return std::stod(input); };
 
-	iom.FileReader<int>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\int - 10000.txt", intArr, stoi);
-	iom.FileReader<double>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\double - 10000.txt", doubleArr, stod);
-	iom.FileReader<std::string>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\string - 10000.txt", strArr);
-	iom.FileReader<Rectangle>("C:\\Users\\Â÷¿¹½Â\\source\\repos\\RandomDataCreator\\rectangle - 10000.txt", recArr);
+	iom.FileReader<int>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\int - 10.txt", intArr, stoi);
+	iom.FileReader<double>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\double - 10.txt", doubleArr, stod);
+	iom.FileReader<std::string>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\string - 10.txt", strArr);
+	iom.FileReader<Rectangle>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\rectangle - 10.txt", recArr);
 
 	timer(stopwatch, "sorts::bubbleSort(intArr)", sorts::bubbleSort<int>, intArr);
 	timer(stopwatch, "sorts::bubbleSort(doubleArr)", sorts::bubbleSort<double>, doubleArr);
