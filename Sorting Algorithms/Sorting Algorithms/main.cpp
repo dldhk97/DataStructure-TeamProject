@@ -5,7 +5,6 @@
 int main()
 {
 	IOManager iom;
-	SortManager sm;
 
 	std::vector<int> intArr;
 	std::vector<double> doubleArr;
@@ -17,31 +16,72 @@ int main()
 	iom.FileReader<std::string>("C:\\Users\\차예승\\source\\repos\\RandomDataCreator\\string - 10000.txt", strArr);
 	iom.FileReader<Rectangle>("C:\\Users\\차예승\\source\\repos\\RandomDataCreator\\rectangle - 10000.txt", recArr);
 
-	while (1)
-	{
-		userInput = iom.getMenu();
-		if (userInput == EXIT)
-			break;
-		switch (userInput)
-		{
-		case INSERT:
-			sm.insertRandom(intArr);
-			sm.insertRandom(strArr);
-			sm.insertRandom(recArr);
-			break;
-		case SORT:
-			userInput = iom.getSortType();
-			sm.sort(userInput, intArr);
-			sm.sort(userInput, strArr);
-			sm.sort(userInput, recArr);
-			break;
-		case DISPLAY:
-			sm.displayArr(intArr);
-			sm.displayArr(strArr);
-			sm.displayArr(recArr);
-			break;
-		}
-	}
+	sorts::bubbleSort(intArr);
+	sorts::bubbleSort(doubleArr);
+	sorts::bubbleSort(strArr);
+	sorts::bubbleSort(recArr);
+
+	sorts::selectionSort(intArr);
+	sorts::selectionSort(doubleArr);
+	sorts::selectionSort(strArr);
+	sorts::selectionSort(recArr);
+
+	sorts::insertionSort(intArr);
+	sorts::insertionSort(doubleArr);
+	sorts::insertionSort(strArr);
+	sorts::insertionSort(recArr);
+
+	//sorts::insertionSort_list(intArr);
+	//sorts::insertionSort_list(doubleArr);
+	//sorts::insertionSort_list(strArr);
+	//sorts::insertionSort_list(recArr);
+
+	sorts::mergeSort(intArr);
+	sorts::mergeSort(doubleArr);
+	sorts::mergeSort(strArr);
+	sorts::mergeSort(recArr);
+
+	//sorts::mergeSort_non_recursive(intArr);
+	//sorts::mergeSort_non_recursive(doubleArr);
+	//sorts::mergeSort_non_recursive(strArr);
+	//sorts::mergeSort_non_recursive(recArr);
+
+	//sorts::mergeSort_natural(intArr);
+	//sorts::mergeSort_natural(doubleArr);
+	//sorts::mergeSort_natural(strArr);
+	//sorts::mergeSort_natural(recArr);
+
+	sorts::shellSort(intArr);
+	sorts::shellSort(doubleArr);
+	sorts::shellSort(strArr);
+	sorts::shellSort(recArr);
+
+	sorts::heapSort(intArr);
+	sorts::heapSort(doubleArr);
+	sorts::heapSort(strArr);
+	sorts::heapSort(recArr);
+
+	sorts::recursiveQuickSort(intArr, 0, intArr.size() - 1);
+	sorts::recursiveQuickSort(doubleArr, 0, doubleArr.size() - 1);
+	sorts::recursiveQuickSort(strArr, 0, strArr.size() - 1);
+	sorts::recursiveQuickSort(recArr, 0, recArr.size() - 1);
+
+	sorts::recursiveQuickSort_median(intArr, 0, intArr.size() - 1);
+	sorts::recursiveQuickSort_median(doubleArr, 0, doubleArr.size() - 1);
+	sorts::recursiveQuickSort_median(strArr, 0, strArr.size() - 1);
+	sorts::recursiveQuickSort_median(recArr, 0, recArr.size() - 1);
+
+	//sorts::recursiveQuickSort_non_recursive(intArr, 0, intArr.size() - 1);
+	//sorts::recursiveQuickSort_non_recursive(doubleArr, 0, doubleArr.size() - 1);
+	//sorts::recursiveQuickSort_non_recursive(strArr, 0, strArr.size() - 1);
+	//sorts::recursiveQuickSort_non_recursive(recArr, 0, recArr.size() - 1);
+
+	//sorts::radixSort(intArr);
+	//sorts::radixSort(doubleArr);
+	//sorts::radixSort(strArr);
+	//sorts::radixSort(recArr);
+
+
 	iom.displayMessage("종료합니다.");
 	return 0;
 }
