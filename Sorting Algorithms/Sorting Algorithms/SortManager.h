@@ -60,6 +60,7 @@ void SortManager::sort(int sortType, std::vector<dataType>& arr)
 		sorts::recursiveQuickSort(arr, 0, arr.size() - 1);
 		break;
 	case QUICK_RECURSIVE_MEDIAN:
+		sorts::recursiveQuickSort_median(arr, 0, arr.size() - 1);
 		break;
 	case QUICK_NON_RECURSIVE:
 		break;
