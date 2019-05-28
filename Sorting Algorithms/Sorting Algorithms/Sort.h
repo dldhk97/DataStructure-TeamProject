@@ -5,3 +5,4 @@
 #include "QuickSort.h"
 #include "MergeSort.h"
 #include "SelectionSort.h"
+#include "ShellSort.h"
