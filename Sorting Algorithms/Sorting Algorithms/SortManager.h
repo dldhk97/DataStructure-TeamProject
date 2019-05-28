@@ -57,6 +57,7 @@ void SortManager::sort(int sortType, std::vector<dataType>& arr)
 		sorts::heapSort(arr);
 		break;
 	case QUICK_RECURSIVE_FIRST:
+		sorts::recursiveQuickSort(arr, 0, arr.size() - 1);
 		break;
 	case QUICK_RECURSIVE_MEDIAN:
 		break;
