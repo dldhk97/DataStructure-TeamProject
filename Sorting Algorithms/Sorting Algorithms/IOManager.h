@@ -3,21 +3,11 @@
 #include <string>
 #include <fstream>
 #include <functional>
-#include "SortManager.h"
-
-enum Menu { INSERT = 1, SORT, DISPLAY, EXIT };
+#include <vector>
 
 class IOManager
 {
 public:
-	//Get Menu
-	int getMenu();
-	int getSortType();
-
-	//Getter
-	int getInt(std::string message);
-
-	void displayMessage(std::string message);
 	template<typename T> void FileReader(std::string file_path, std::vector<T>& result);
 	template<typename T> void FileReader(std::string file_path, std::vector<T>& result, std::function<T(std::string)> fn);
 };

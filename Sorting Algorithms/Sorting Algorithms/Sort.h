@@ -1,5 +1,4 @@
 #pragma once
-#include "SortManager.h"
 #include "BubbleSort.h"
 #include "SelectionSort.h"
 #include "InsertionSort.h"

@@ -1,6 +1,9 @@
-#include "SortManager.h"
+#include <iostream>
+#include <vector>
+
 #include "IOManager.h"
 #include "Sort.h"
+#include "Rectangle.h"
 
 int main()
 {
@@ -83,7 +86,5 @@ int main()
 	sorts::radixSort16(intArr);
 	sorts::radixSortMasking(intArr);
 
-
-	iom.displayMessage("종료합니다.");
 	return 0;
 }
