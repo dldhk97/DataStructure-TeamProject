@@ -34,7 +34,7 @@ int IOManager::getSortType()
 		std::cout << "=====================" << "\n";
 		userInput = getInt("입력 :");
 
-		if (BUBBLE <= userInput && userInput <= MERGE)
+		if (BUBBLE <= userInput && userInput <= SELECTION)
 			return userInput;
 		std::cout << "입력이 잘못되었습니다." << "\n";
 	}
