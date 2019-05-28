@@ -79,10 +79,9 @@ int main()
 	//sorts::recursiveQuickSort_non_recursive(strArr, 0, strArr.size() - 1);
 	//sorts::recursiveQuickSort_non_recursive(recArr, 0, recArr.size() - 1);
 
-	//sorts::radixSort(intArr);
-	//sorts::radixSort(doubleArr);
-	//sorts::radixSort(strArr);
-	//sorts::radixSort(recArr);
+	sorts::radixSort10(intArr);
+	sorts::radixSort16(intArr);
+	sorts::radixSortMasking(intArr);
 
 
 	iom.displayMessage("종료합니다.");
