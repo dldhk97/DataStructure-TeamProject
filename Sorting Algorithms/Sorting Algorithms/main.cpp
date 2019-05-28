@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <ctime>
 #include "IOManager.h"
 #include "Sort.h"
 #include "Rectangle.h"
@@ -36,11 +36,11 @@ int main()
 	sorts::insertionSort(strArr);
 	sorts::insertionSort(recArr);
 
-	/*sorts::insertionSort_list(intArr);
+	sorts::insertionSort_list(intArr);
 	sorts::insertionSort_list(doubleArr);
 	sorts::insertionSort_list(strArr);
 	sorts::insertionSort_list(recArr);
-*/
+
 	sorts::mergeSort(intArr);
 	sorts::mergeSort(doubleArr);
 	sorts::mergeSort(strArr);
