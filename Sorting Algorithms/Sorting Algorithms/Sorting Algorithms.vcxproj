@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BubbleSort.h" />
+    <ClInclude Include="HeapSort.h" />
     <ClInclude Include="InsertionSort.h" />
     <ClInclude Include="IOManager.h" />
     <ClInclude Include="MergeSort.h" />
