@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <ctime>
 #include "IOManager.h"
 #include "Sort.h"
@@ -18,10 +19,10 @@ int main()
 	auto stoi = [](std::string input)->int {return std::stoi(input); };
 	auto stod = [](std::string input)->double {return std::stod(input); };
 
-	iom.FileReader<int>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\int - 10.txt", intArr, stoi);
-	iom.FileReader<double>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\double - 10.txt", doubleArr, stod);
-	iom.FileReader<std::string>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\string - 10.txt", strArr);
-	iom.FileReader<Rectangle>("C:\\Users\\Administrator\\source\\repos\\RandomDataCreator\\RandomDataCreator\\rectangle - 10.txt", recArr);
+	iom.FileReader<int>("int - 10000.txt", intArr, stoi);
+	iom.FileReader<double>("double - 10000.txt", doubleArr, stod);
+	iom.FileReader<std::string>("string - 10000.txt", strArr);
+	iom.FileReader<Rectangle>("rectangle - 10000.txt", recArr);
 
 	timer(stopwatch, "sorts::bubbleSort(intArr)", sorts::bubbleSort<int>, intArr);
 	timer(stopwatch, "sorts::bubbleSort(doubleArr)", sorts::bubbleSort<double>, doubleArr);
@@ -102,4 +103,12 @@ void timer(std::vector<std::pair<std::string, clock_t>>& stopwatch, std::string 
 	function(temp);
 	auto stop = clock();
 	stopwatch.push_back(std::make_pair(function_name, stop - start));
+
+	// DEBUG
+	std::string path = function_name.substr(7, function_name.size()) + "__sorted.txt";
+	std::ofstream result;
+	result.open(path);
+	for (auto i : temp)
+		result << i << std::endl;
+	result.close();
 }
