@@ -38,12 +38,12 @@ namespace sorts
 				gap++; // gap을 홀수로 만든다.
 			}
 
-				// 부분 리스트의 개수는 gap과 같다.
-				for (i = 0; i < gap; i++) 
-				{
-					// 부분 리스트에 대한 삽입 정렬 수행
-					insertionSortForGap(dataArr, i, n - 1, gap);
-				}
+			// 부분 리스트의 개수는 gap과 같다.
+			for (i = 0; i < gap; i++) 
+			{
+				// 부분 리스트에 대한 삽입 정렬 수행
+				insertionSortForGap(dataArr, i, n - 1, gap);
+			}
 		}
 	}
 

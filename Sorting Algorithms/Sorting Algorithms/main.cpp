@@ -36,7 +36,7 @@ int main()
 	iom.displayMessage("rectangle\n\n");
 	iom.FileReader<Rectangle>(PATH + "rectangle - " + DATASIZE + ".txt", recArr);
 
-	/*iom.displayMessage("버블 정렬 시작\n");
+	iom.displayMessage("버블 정렬 시작\n");
 	timer(stopwatch, "sorts::bubbleSort(intArr)", sorts::bubbleSort<int>, intArr);
 	iom.displayMessage("int, ");
 	timer(stopwatch, "sorts::bubbleSort(doubleArr)", sorts::bubbleSort<double>, doubleArr);
@@ -104,7 +104,7 @@ int main()
 	timer(stopwatch, "sorts::naturalMergeSort(strArr)", sorts::naturalMergeSort<std::string>, strArr);
 	iom.displayMessage("string, ");
 	timer(stopwatch, "sorts::naturalMergeSort(recArr)", sorts::naturalMergeSort<Rectangle>, recArr);
-	iom.displayMessage("rectangle\n\n");*/
+	iom.displayMessage("rectangle\n\n");
 
 	iom.displayMessage("쉘 정렬 시작\n");
 	timer(stopwatch, "sorts::shellSort(intArr)", sorts::shellSort<int>, intArr);
@@ -116,7 +116,7 @@ int main()
 	timer(stopwatch, "sorts::shellSort(recArr)", sorts::shellSort<Rectangle>, recArr);
 	iom.displayMessage("rectangle\n\n");
 
-	/*iom.displayMessage("힙 정렬 시작\n");
+	iom.displayMessage("힙 정렬 시작\n");
 	timer(stopwatch, "sorts::heapSort(intArr)", sorts::heapSort<int>, intArr);
 	iom.displayMessage("int, ");
 	timer(stopwatch, "sorts::heapSort(doubleArr)", sorts::heapSort<double>, doubleArr);
@@ -162,7 +162,7 @@ int main()
 	timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
 	iom.displayMessage("16 완료 ");
 	timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
-	iom.displayMessage("Masking 완료\n\n");*/
+	iom.displayMessage("Masking 완료\n\n");
 
 	iom.displayMessage("경과 : \n");
 	for (auto i : stopwatch)
