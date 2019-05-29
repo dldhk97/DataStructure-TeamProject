@@ -26,7 +26,7 @@ namespace sorts
 
 	// 시작 인덱스 first 부터 시작하는 부분리스트를 구성해 삽입 정렬을 시행한다.
 	template <typename dataType>
-	int insertionSortForGap(std::vector<dataType>& dataArr, int first, int last, int gap)
+	void insertionSortForGap(std::vector<dataType>& dataArr, int first, int last, int gap)
 	{
 		dataType key;
 		int i, j;
