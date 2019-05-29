@@ -26,15 +26,15 @@ int main()
 	iom.displayMessage("현재 파일 경로 : " + PATH + "\n");
 	iom.displayMessage("데이터 크기 : " + DATASIZE + "\n\n");
 
-	iom.displayMessage("파일 읽기 시작 - int\n");
+	iom.displayMessage("파일 읽기 시작\n");
+	iom.displayMessage("int, ");
 	iom.FileReader<int>(PATH + "int - " + DATASIZE + ".txt", intArr, stoi);
-	iom.displayMessage("파일 읽기 시작 - double\n");
+	iom.displayMessage("double, ");
 	iom.FileReader<double>(PATH + "double - " + DATASIZE + ".txt", doubleArr, stod);
-	iom.displayMessage("파일 읽기 시작 - string\n");
+	iom.displayMessage("string, ");
 	iom.FileReader<std::string>(PATH + "string - " + DATASIZE + ".txt", strArr);
-	iom.displayMessage("파일 읽기 시작 - rectangle\n");
+	iom.displayMessage("rectangle\n\n");
 	iom.FileReader<Rectangle>(PATH + "rectangle - " + DATASIZE + ".txt", recArr);
-	iom.displayMessage("파일 읽기 완료\n\n");
 
 	iom.displayMessage("버블 정렬 시작\n");
 	timer(stopwatch, "sorts::bubbleSort(intArr)", sorts::bubbleSort<int>, intArr);
@@ -162,9 +162,9 @@ int main()
 	timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
 	iom.displayMessage("16 완료 ");
 	timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
-	iom.displayMessage("Masking 완료\n");
+	iom.displayMessage("Masking 완료\n\n");
 
-	iom.displayMessage("\n경과 : \n");
+	iom.displayMessage("경과 : \n");
 	for (auto i : stopwatch)
 		std::cout << i.first << '\t' << i.second << " ms" << std::endl;
 
