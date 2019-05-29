@@ -20,6 +20,11 @@ int main()
 	std::vector<std::string> strArr;
 	std::vector<Rectangle> recArr;
 
+	std::list<int> intList;
+	std::list<double> doubleList;
+	std::list<std::string> strList;
+	std::list<Rectangle> recList;
+
 	auto stoi = [](std::string input)->int {return std::stoi(input); };
 	auto stod = [](std::string input)->double {return std::stod(input); };
 
@@ -35,6 +40,16 @@ int main()
 	iom.FileReader<std::string>(PATH + "string - " + DATASIZE + ".txt", strArr);
 	iom.displayMessage("rectangle\n\n");
 	iom.FileReader<Rectangle>(PATH + "rectangle - " + DATASIZE + ".txt", recArr);
+
+	//리스트로 생성
+	for (int elem : intArr)
+		intList.push_back(elem);
+	for (double elem : doubleArr)
+		doubleList.push_back(elem);
+	for (std::string elem : strArr)
+		strList.push_back(elem);
+	for (Rectangle elem : recArr)
+		recList.push_back(elem);
 
 	iom.displayMessage("버블 정렬 시작\n");
 	timer(stopwatch, "sorts::bubbleSort(intArr)", sorts::bubbleSort<int>, intArr);
@@ -67,13 +82,13 @@ int main()
 	iom.displayMessage("rectangle\n\n");
 
 	iom.displayMessage("삽입 정렬(리스트) 시작\n");
-	timer(stopwatch, "sorts::insertionSort_list(intArr)", sorts::insertionSort_list<int>, intArr);
+	timer(stopwatch, "sorts::insertionSort_list(intArr)", sorts::insertionSort_list<int>, intList);
 	iom.displayMessage("int, ");
-	timer(stopwatch, "sorts::insertionSort_list(doubleArr)", sorts::insertionSort_list<double>, doubleArr);
+	timer(stopwatch, "sorts::insertionSort_list(doubleArr)", sorts::insertionSort_list<double>, doubleList);
 	iom.displayMessage("double, ");
-	timer(stopwatch, "sorts::insertionSort_list(strArr)", sorts::insertionSort_list<std::string>, strArr);
+	timer(stopwatch, "sorts::insertionSort_list(strArr)", sorts::insertionSort_list<std::string>, strList);
 	iom.displayMessage("string, ");
-	timer(stopwatch, "sorts::insertionSort_list(recArr)", sorts::insertionSort_list<Rectangle>, recArr);
+	timer(stopwatch, "sorts::insertionSort_list(recArr)", sorts::insertionSort_list<Rectangle>, recList);
 	iom.displayMessage("rectangle\n\n");
 
 	iom.displayMessage("재귀 병합 정렬 시작\n");
