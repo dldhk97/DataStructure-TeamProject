@@ -18,6 +18,13 @@ inline void IOManager::FileReader(std::string file_path, std::vector<dataType>& 
 {
 	std::ifstream stringReader(file_path);
 	std::string readed;
+
+	if (!stringReader.is_open())
+	{
+		std::cout << "파일을 열 수 없습니다." << "\n";
+		return;
+	}
+
 	while (!stringReader.eof())
 	{
 		std::getline(stringReader, readed, '\n');
@@ -33,15 +40,22 @@ inline void IOManager::FileReader(std::string file_path, std::vector<dataType>& 
 {
 	std::ifstream stringReader(file_path);
 	std::string readed;
+
+	if (!stringReader.is_open())
+	{
+		std::cout << "파일을 열 수 없습니다." << "\n";
+		return;
+	}
+
 	while (!stringReader.eof())
 	{
 		std::getline(stringReader, readed, '\n');
 		if (readed != "")
 		{
 			if (fn)
+			{
 				result.push_back(fn(readed));
-			//else
-			//	result.push_back(T(readed));
+			}
 		}
 	}
 }
