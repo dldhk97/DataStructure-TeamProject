@@ -8,6 +8,7 @@
 class IOManager
 {
 public:
+	void displayMessage(std::string message);
 	template<typename dataType> void FileReader(std::string file_path, std::vector<dataType>& result);
 	template<typename dataType> void FileReader(std::string file_path, std::vector<dataType>& result, std::function<dataType(std::string)> fn);
 };
