@@ -5,7 +5,7 @@
 #include "Sort.h"
 #include "Rectangle.h"
 
-//const std::string PATH = "C:\\Users\\Administrator\\source\\repos\\dldhk97\\DataStructure-TeamProject\\Sorting Algorithms\\Debug\\";	//절대 경로 사용할 경우
+//const std::string PATH = "C:\\Users\\Administrator\\source\\repos\\dldhk97\\DataStructure-TeamProject\\RandomDataCreator\\Debug\\";	//절대 경로 사용할 경우
 const std::string PATH = "";																											//상대 경로 사용할 경우
 const std::string DATASIZE = "1000";
 
