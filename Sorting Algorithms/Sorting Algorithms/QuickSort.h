@@ -199,21 +199,4 @@ namespace sorts
 			stack.push(start);
 		}
 	}
-
-	template <typename dataType>
-	void sort_of_three_key(std::vector<dataType> dataArr, int left, int middle, int right)
-	{
-		if (dataArr[left] > dataArr[middle])
-		{
-			std::swap(dataArr[left], dataArr[middle]);
-		}
-		if (dataArr[middle] > dataArr[right])
-		{
-			std::swap(dataArr[right], dataArr[middle]);
-		}
-		if (dataArr[left] > dataArr[middle])
-		{
-			std::swap(dataArr[left], dataArr[middle]);
-		}
-	}
 }
