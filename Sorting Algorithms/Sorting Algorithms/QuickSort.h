@@ -41,7 +41,7 @@ namespace sorts
 			{
 				// i번째와 j번째를 스왑
 				temp = dataArr[i];
-				dataArr[i] = dataArr[j];					
+				dataArr[i] = dataArr[j];
 				dataArr[j] = temp;
 			}
 		}
@@ -68,7 +68,7 @@ namespace sorts
 		//dataArr.swap(start, sorts::medianOfThree(dataArr, start, end));
 		std::swap(dataArr[start], dataArr[sorts::medianOfThree(dataArr, start, end)]);
 		int pivot = start;
-		
+
 		int i = pivot + 1; // 왼쪽 출발 지점 
 		int j = end; // 오른쪽 출발 지점
 		dataType temp;
@@ -110,31 +110,39 @@ namespace sorts
 	{
 		recursiveQuickSort_median_(dataArr, 0, dataArr.size() - 1);
 	}
-	
+
 	template <typename dataType>
 	int medianOfThree(std::vector<dataType>& dataArr, int start, int end)
 	{
-		if (dataArr[0] <= dataArr[end / 2] && dataArr[end / 2] <= dataArr[end])
-			return end / 2;
-
+		if (dataArr[end / 2] <= dataArr[end] && dataArr[end] <= dataArr[0])
+		{
+			return end;
+		}
+		if (dataArr[end / 2] <= dataArr[0] && dataArr[0] <= dataArr[end])
+		{
+			return 0;
+		}
 		if (dataArr[end] <= dataArr[end / 2] && dataArr[end / 2] <= dataArr[0])
+		{
 			return end / 2;
-
-		if (dataArr[end/2] <= dataArr[0] && dataArr[0] <= dataArr[end])
+		}
+		if (dataArr[end] <= dataArr[0] && dataArr[0] <= dataArr[end / 2])
+		{
 			return 0;
-
-		if (dataArr[end] <= dataArr[0] && dataArr[0] <= dataArr[end/2])
-			return 0;
-
+		}
 		if (dataArr[0] <= dataArr[end] && dataArr[end] <= dataArr[end / 2])
+		{
 			return end;
-
-		if (dataArr[0] <= dataArr[end] && dataArr[end] <= dataArr[end / 2])
-			return end;
+		}
+		if (dataArr[0] <= dataArr[end / 2] && dataArr[end / 2] <= dataArr[end])
+		{
+			return end / 2;
+		}
+		std::cout << "error!" << std::endl;
 	}
 
 	template <typename dataType>
-	void nonRecursiveQuickSort(std::vector<dataType>& dataArr) 
+	void nonRecursiveQuickSort(std::vector<dataType>& dataArr)
 	{
 		const int size = dataArr.size();
 		Stack<int> stk;
@@ -147,14 +155,14 @@ namespace sorts
 		median = left + (right - left) / 2;
 
 		stk.push(right); stk.push(left);
-		while (!stk.isEmpty()) 
+		while (!stk.isEmpty())
 		{
 			left = stk.peek();
 			stk.pop();
 			right = stk.peek();
 			stk.pop();
 
-			while (left < right) 
+			while (left < right)
 			{
 				median = left + (right - left) / 2;
 
@@ -166,7 +174,7 @@ namespace sorts
 				i = left;
 				j = right + 1;
 
-				while (true) 
+				while (true)
 				{
 					while (dataArr[++i] < pivot && i < dataArr.size() - 1);
 					while (pivot < dataArr[--j]);
@@ -179,7 +187,7 @@ namespace sorts
 				dataArr[left] = dataArr[j];
 				dataArr[j] = pivot;
 
-				if (i < right) 
+				if (i < right)
 				{
 					stk.push(right);
 					stk.push(i);
@@ -190,7 +198,7 @@ namespace sorts
 	}
 
 	template <typename dataType>
-	void sort_of_three_key(std::vector<dataType> dataArr, int left, int middle, int right) 
+	void sort_of_three_key(std::vector<dataType> dataArr, int left, int middle, int right)
 	{
 		if (dataArr[left] > dataArr[middle])
 		{
