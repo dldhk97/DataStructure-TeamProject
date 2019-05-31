@@ -214,6 +214,17 @@ int main()
 			std::cout << std::endl;
 	}
 
+	std::ofstream report;
+	report.open("_report.txt");
+	for (auto i : stopwatch)
+	{
+		if (i.second >= 0)
+			report << std::setw(45) << i.first << '\t' << i.second << " ms" << std::endl;
+		else
+			report << std::endl;
+	}
+	report.close();
+
 	return 0;
 }
 
