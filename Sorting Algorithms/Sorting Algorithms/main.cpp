@@ -52,40 +52,30 @@ int main()
 	for (Rectangle elem : recArr)
 		recList.push_back(elem);
 
-	//iom.displayMessage("버블 정렬 시작\n");
-	//timer(stopwatch, "sorts::bubbleSort(intArr)", sorts::bubbleSort<int>, intArr);
-	//iom.displayMessage("int, ");
-	//timer(stopwatch, "sorts::bubbleSort(doubleArr)", sorts::bubbleSort<double>, doubleArr);
-	//iom.displayMessage("double, ");
-	//timer(stopwatch, "sorts::bubbleSort(strArr)", sorts::bubbleSort<std::string>, strArr);
-	//iom.displayMessage("string, ");
-	//timer(stopwatch, "sorts::bubbleSort(recArr)", sorts::bubbleSort<Rectangle>, recArr);
-	//iom.displayMessage("rectangle\n\n");
-
-	//stopwatch.push_back(std::make_pair("", -1));
-
-	//iom.displayMessage("선택 정렬 시작\n");
-	//timer(stopwatch, "sorts::selectionSort(intArr)", sorts::selectionSort<std::vector<int>>, intArr);
-	//iom.displayMessage("int, ");
-	//timer(stopwatch, "sorts::selectionSort(doubleArr)", sorts::selectionSort<std::vector<double>>, doubleArr);
-	//iom.displayMessage("double, ");
-	//timer(stopwatch, "sorts::selectionSort(strArr)", sorts::selectionSort<std::vector<std::string>>, strArr);
-	//iom.displayMessage("string, ");
-	//timer(stopwatch, "sorts::selectionSort(recArr)", sorts::selectionSort<std::vector<Rectangle>>, recArr);
-	//iom.displayMessage("rectangle\n\n");
+	iom.displayMessage("버블 정렬 시작\n");
+	timer(stopwatch, "sorts::bubbleSort(intArr)", sorts::bubbleSort<int>, intArr);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "sorts::bubbleSort(doubleArr)", sorts::bubbleSort<double>, doubleArr);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "sorts::bubbleSort(strArr)", sorts::bubbleSort<std::string>, strArr);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "sorts::bubbleSort(recArr)", sorts::bubbleSort<Rectangle>, recArr);
+	iom.displayMessage("rectangle\n\n");
 
 	stopwatch.push_back(std::make_pair("", -1));
 
-	//iom.displayMessage("삽입 정렬 시작\n");
-	//timer(stopwatch, "sorts::insertionSort(intArr)", sorts::insertionSort<int>, intArr);
-	//iom.displayMessage("int, ");
-	//timer(stopwatch, "sorts::insertionSort(doubleArr)", sorts::insertionSort<double>, doubleArr);
-	//iom.displayMessage("double, ");
-	//timer(stopwatch, "sorts::insertionSort(strArr)", sorts::insertionSort<std::string>, strArr);
-	//iom.displayMessage("string, ");
-	//timer(stopwatch, "sorts::insertionSort(recArr)", sorts::insertionSort<Rectangle>, recArr);
-	//iom.displayMessage("rectangle\n\n");
-	//////////////////////////////
+	iom.displayMessage("선택 정렬 시작\n");
+	timer(stopwatch, "sorts::selectionSort(intArr)", sorts::selectionSort<std::vector<int>>, intArr);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "sorts::selectionSort(doubleArr)", sorts::selectionSort<std::vector<double>>, doubleArr);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "sorts::selectionSort(strArr)", sorts::selectionSort<std::vector<std::string>>, strArr);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "sorts::selectionSort(recArr)", sorts::selectionSort<std::vector<Rectangle>>, recArr);
+	iom.displayMessage("rectangle\n\n");
+
+	stopwatch.push_back(std::make_pair("", -1));
+
 	iom.displayMessage("삽입 정렬 시작\n");
 	timer(stopwatch, "sorts::insertionSort(intArr)", sorts::insertionSort<std::vector<int>>, intArr);
 	iom.displayMessage("int, ");
@@ -99,26 +89,16 @@ int main()
 	stopwatch.push_back(std::make_pair("", -1));
 
 	iom.displayMessage("삽입 정렬(리스트) 시작\n");
-	timer(stopwatch, "sorts::insertionSort(intArr)", sorts::insertionSort<std::list<int>>, intList);
+	timer(stopwatch, "sorts::insertionSort(intList)", sorts::insertionSort<std::list<int>>, intList);
 	iom.displayMessage("int, ");
-	timer(stopwatch, "sorts::insertionSort(doubleArr)", sorts::insertionSort<std::list<double>>, doubleList);
+	timer(stopwatch, "sorts::insertionSort(doubleList)", sorts::insertionSort<std::list<double>>, doubleList);
 	iom.displayMessage("double, ");
-	timer(stopwatch, "sorts::insertionSort(strArr)", sorts::insertionSort<std::list<std::string>>, strList);
+	timer(stopwatch, "sorts::insertionSort(strList)", sorts::insertionSort<std::list<std::string>>, strList);
 	iom.displayMessage("string, ");
-	timer(stopwatch, "sorts::insertionSort(recArr)", sorts::insertionSort<std::list<Rectangle>>, recList);
+	timer(stopwatch, "sorts::insertionSort(recList)", sorts::insertionSort<std::list<Rectangle>>, recList);
 	iom.displayMessage("rectangle\n\n");
 
-	/*iom.displayMessage("삽입 정렬(리스트) 시작\n");
-	timer(stopwatch, "sorts::insertionSort_list(intArr)", sorts::insertionSort_list<int>, intList);
-	iom.displayMessage("int, ");
-	timer(stopwatch, "sorts::insertionSort_list(doubleArr)", sorts::insertionSort_list<double>, doubleList);
-	iom.displayMessage("double, ");
-	timer(stopwatch, "sorts::insertionSort_list(strArr)", sorts::insertionSort_list<std::string>, strList);
-	iom.displayMessage("string, ");
-	timer(stopwatch, "sorts::insertionSort_list(recArr)", sorts::insertionSort_list<Rectangle>, recList);
-	iom.displayMessage("rectangle\n\n");*/
-
-	/*stopwatch.push_back(std::make_pair("", -1));
+	stopwatch.push_back(std::make_pair("", -1));
 
 	iom.displayMessage("재귀 병합 정렬 시작\n");
 	timer(stopwatch, "sorts::mergeSort(intArr)", sorts::mergeSort<std::vector <int>>, intArr);
@@ -130,57 +110,57 @@ int main()
 	timer(stopwatch, "sorts::mergeSort(recArr)", sorts::mergeSort<std::vector <Rectangle>>, recArr);
 	iom.displayMessage("rectangle\n\n");
 
-	stopwatch.push_back(std::make_pair("", -1));*/
+	stopwatch.push_back(std::make_pair("", -1));
 
-	//iom.displayMessage("비재귀 병합 정렬 시작\n");
-	//timer(stopwatch, "sorts::nonRecursiveMergeSort(intArr)", sorts::nonRecursiveMergeSort<int>, intArr);
-	//iom.displayMessage("int, ");
-	//timer(stopwatch, "sorts::nonRecursiveMergeSort(doubleArr)", sorts::nonRecursiveMergeSort<double>, doubleArr);
-	//iom.displayMessage("double, ");
-	//timer(stopwatch, "sorts::nonRecursiveMergeSort(strArr)", sorts::nonRecursiveMergeSort<std::string>, strArr);
-	//iom.displayMessage("string, ");
-	//timer(stopwatch, "sorts::nonRecursiveMergeSort(recArr)", sorts::nonRecursiveMergeSort<Rectangle>, recArr);
-	//iom.displayMessage("rectangle\n\n");
-
-	//stopwatch.push_back(std::make_pair("", -1));
-
-	//iom.displayMessage("자연 병합 정렬 시작\n");
-	//timer(stopwatch, "sorts::naturalMergeSort(intArr)", sorts::naturalMergeSort<int>, intArr);
-	//iom.displayMessage("int, ");
-	//timer(stopwatch, "sorts::naturalMergeSort(doubleArr)", sorts::naturalMergeSort<double>, doubleArr);
-	//iom.displayMessage("double, ");
-	//timer(stopwatch, "sorts::naturalMergeSort(strArr)", sorts::naturalMergeSort<std::string>, strArr);
-	//iom.displayMessage("string, ");
-	//timer(stopwatch, "sorts::naturalMergeSort(recArr)", sorts::naturalMergeSort<Rectangle>, recArr);
-	//iom.displayMessage("rectangle\n\n");
+	iom.displayMessage("비재귀 병합 정렬 시작\n");
+	timer(stopwatch, "sorts::nonRecursiveMergeSort(intArr)", sorts::nonRecursiveMergeSort<int>, intArr);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "sorts::nonRecursiveMergeSort(doubleArr)", sorts::nonRecursiveMergeSort<double>, doubleArr);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "sorts::nonRecursiveMergeSort(strArr)", sorts::nonRecursiveMergeSort<std::string>, strArr);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "sorts::nonRecursiveMergeSort(recArr)", sorts::nonRecursiveMergeSort<Rectangle>, recArr);
+	iom.displayMessage("rectangle\n\n");
 
 	stopwatch.push_back(std::make_pair("", -1));
 
-	//iom.displayMessage("쉘 정렬 시작\n");
-	//timer(stopwatch, "sorts::shellSort(intArr)", sorts::shellSort<int>, intArr);
-	//iom.displayMessage("int, ");
-	//timer(stopwatch, "sorts::shellSort(doubleArr)", sorts::shellSort<double>, doubleArr);
-	//iom.displayMessage("double, ");
-	//timer(stopwatch, "sorts::shellSort(strArr)", sorts::shellSort<std::string>, strArr);
-	//iom.displayMessage("string, ");
-	//timer(stopwatch, "sorts::shellSort(recArr)", sorts::shellSort<Rectangle>, recArr);
-	//iom.displayMessage("rectangle\n\n");
-
-	//stopwatch.push_back(std::make_pair("", -1));
-
-	//iom.displayMessage("힙 정렬 시작\n");
-	//timer(stopwatch, "sorts::heapSort(intArr)", sorts::heapSort<int>, intArr);
-	//iom.displayMessage("int, ");
-	//timer(stopwatch, "sorts::heapSort(doubleArr)", sorts::heapSort<double>, doubleArr);
-	//iom.displayMessage("double, ");
-	//timer(stopwatch, "sorts::heapSort(strArr)", sorts::heapSort<std::string>, strArr);
-	//iom.displayMessage("string, ");
-	//timer(stopwatch, "sorts::heapSort(recArr)", sorts::heapSort<Rectangle>, recArr);
-	//iom.displayMessage("rectangle\n\n");
+	iom.displayMessage("자연 병합 정렬 시작\n");
+	timer(stopwatch, "sorts::naturalMergeSort(intArr)", sorts::naturalMergeSort<int>, intArr);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "sorts::naturalMergeSort(doubleArr)", sorts::naturalMergeSort<double>, doubleArr);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "sorts::naturalMergeSort(strArr)", sorts::naturalMergeSort<std::string>, strArr);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "sorts::naturalMergeSort(recArr)", sorts::naturalMergeSort<Rectangle>, recArr);
+	iom.displayMessage("rectangle\n\n");
 
 	stopwatch.push_back(std::make_pair("", -1));
 
-	/*iom.displayMessage("재귀 퀵 정렬 시작\n");
+	iom.displayMessage("쉘 정렬 시작\n");
+	timer(stopwatch, "sorts::shellSort(intArr)", sorts::shellSort<int>, intArr);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "sorts::shellSort(doubleArr)", sorts::shellSort<double>, doubleArr);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "sorts::shellSort(strArr)", sorts::shellSort<std::string>, strArr);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "sorts::shellSort(recArr)", sorts::shellSort<Rectangle>, recArr);
+	iom.displayMessage("rectangle\n\n");
+
+	stopwatch.push_back(std::make_pair("", -1));
+
+	iom.displayMessage("힙 정렬 시작\n");
+	timer(stopwatch, "sorts::heapSort(intArr)", sorts::heapSort<int>, intArr);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "sorts::heapSort(doubleArr)", sorts::heapSort<double>, doubleArr);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "sorts::heapSort(strArr)", sorts::heapSort<std::string>, strArr);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "sorts::heapSort(recArr)", sorts::heapSort<Rectangle>, recArr);
+	iom.displayMessage("rectangle\n\n");
+
+	stopwatch.push_back(std::make_pair("", -1));
+
+	iom.displayMessage("재귀 퀵 정렬 시작\n");
 	timer(stopwatch, "sorts::recursiveQuickSort(intArr)", sorts::recursiveQuickSort<int>, intArr);
 	iom.displayMessage("int, ");
 	timer(stopwatch, "sorts::recursiveQuickSort(doubleArr)", sorts::recursiveQuickSort<double>, doubleArr);
@@ -222,7 +202,7 @@ int main()
 	timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
 	iom.displayMessage("16 완료 ");
 	timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
-	iom.displayMessage("Masking 완료\n\n");*/
+	iom.displayMessage("Masking 완료\n\n");
 
 	iom.displayMessage("경과 : \n");
 	std::cout.setf(std::ios::right);
