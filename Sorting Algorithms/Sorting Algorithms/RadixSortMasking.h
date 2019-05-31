@@ -31,6 +31,8 @@ namespace sorts
 				a[i] = tempBuffer[i];
 
 			exp = exp << 4;
+			if (exp == 0)
+				break;
 		}
 	}
 

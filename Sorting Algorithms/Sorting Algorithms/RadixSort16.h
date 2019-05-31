@@ -30,6 +30,8 @@ namespace sorts
 				a[i] = tempBuffer[i];
 
 			exp *= 16;
+			if (exp == 0)
+				break;
 		}
 	}
 }
