@@ -21,7 +21,7 @@ namespace sorts
 	}*/
 
 	template<typename Container>
-	void insertionSort(Container container)
+	void insertionSort(Container& container)
 	{
 		auto forward_iter = std::begin(container);
 		auto temp_iter = std::end(container);
