@@ -8,7 +8,7 @@
 
 //const std::string PATH = "C:\\Users\\Administrator\\source\\repos\\dldhk97\\DataStructure-TeamProject\\RandomDataCreator\\Debug\\";	//절대 경로 사용할 경우
 const std::string PATH = "";																											//상대 경로 사용할 경우
-const std::string DATASIZE = "100000";
+const std::string DATASIZE = "1000";
 
 template<typename T, typename fn> void timer(std::vector<std::pair<std::string, clock_t>>& stopwatch, std::string function_name, fn function, const T& input);
 
@@ -148,14 +148,33 @@ int main()
 
 	stopwatch.push_back(std::make_pair("", -1));
 
+	//힙정렬용 임시 배열 생성
+	std::vector<int> tempIntArr;
+	std::vector<double> tempDoubleArr;
+	std::vector<std::string> tempStrArr;
+	std::vector<Rectangle> tempRecArr;
+
+	tempIntArr.push_back(intArr[0]);
+	tempDoubleArr.push_back(doubleArr[0]);
+	tempStrArr.push_back(strArr[0]);
+	tempRecArr.push_back(recArr[0]);
+
+	for (int i = 0; i < std::stoi(DATASIZE); i++)
+	{
+		tempIntArr.push_back(intArr[i]);
+		tempDoubleArr.push_back(doubleArr[i]);
+		tempStrArr.push_back(strArr[i]);
+		tempRecArr.push_back(recArr[i]);
+	}
+
 	iom.displayMessage("힙 정렬 시작\n");
-	timer(stopwatch, "sorts::heapSort(intArr)", sorts::heapSort<int>, intArr);
+	timer(stopwatch, "sorts::heapSort(intArr)", sorts::heapSort<int>, tempIntArr);
 	iom.displayMessage("int, ");
-	timer(stopwatch, "sorts::heapSort(doubleArr)", sorts::heapSort<double>, doubleArr);
+	timer(stopwatch, "sorts::heapSort(doubleArr)", sorts::heapSort<double>, tempDoubleArr);
 	iom.displayMessage("double, ");
-	timer(stopwatch, "sorts::heapSort(strArr)", sorts::heapSort<std::string>, strArr);
+	timer(stopwatch, "sorts::heapSort(strArr)", sorts::heapSort<std::string>, tempStrArr);
 	iom.displayMessage("string, ");
-	timer(stopwatch, "sorts::heapSort(recArr)", sorts::heapSort<Rectangle>, recArr);
+	timer(stopwatch, "sorts::heapSort(recArr)", sorts::heapSort<Rectangle>, tempRecArr);
 	iom.displayMessage("rectangle\n\n");
 
 	stopwatch.push_back(std::make_pair("", -1));
@@ -229,7 +248,7 @@ int main()
 }
 
 template<typename T, typename fn>
-void timer(std::vector<std::pair<std::string, clock_t>> & stopwatch, std::string function_name, fn function, const T & input)
+void timer(std::vector<std::pair<std::string, clock_t>>& stopwatch, std::string function_name, fn function, const T& input)
 {
 	T temp(input);
 	auto start = clock();
