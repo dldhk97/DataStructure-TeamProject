@@ -8,7 +8,7 @@
 
 //const std::string PATH = "C:\\Users\\Administrator\\source\\repos\\dldhk97\\DataStructure-TeamProject\\RandomDataCreator\\Debug\\";	//절대 경로 사용할 경우
 const std::string PATH = "";																											//상대 경로 사용할 경우
-const std::string DATASIZE = "100000";
+const std::string DATASIZE = "10000";
 
 template<typename T, typename fn> void timer(std::vector<std::pair<std::string, clock_t>>& stopwatch, std::string function_name, fn function, const T& input);
 
