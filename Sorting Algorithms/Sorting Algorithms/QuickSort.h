@@ -145,8 +145,8 @@ namespace sorts
 	void nonRecursiveQuickSort(std::vector<dataType>& dataArr)
 	{
 		// 퀵소트 함수
-		int start = 0;					//custom
-		int end = dataArr.size();		//custom
+		int start = 0;
+		int end = dataArr.size();
 
 		int i, j;
 		dataType pivot;
@@ -154,8 +154,8 @@ namespace sorts
 
 		// 스택에 넣는다
 
-		stack.push(end);				//custom
-		stack.push(start);				//custom
+		stack.push(end);
+		stack.push(start);
 
 		// 스택이 없어질 때 까지 정렬을 계속한다
 		while (stack.isEmpty())
@@ -185,12 +185,12 @@ namespace sorts
 				// i가 j보다 낮으면 i값하고 j값 교환
 				if (i < j)
 				{
-					std::swap(dataArr[i], dataArr[j]);		//custom
+					std::swap(dataArr[i], dataArr[j]);
 				}
 			}
 			// i가 j를 교차하면 피봇값하고 j값 교환
 
-			std::swap(dataArr[start], dataArr[j]);			//custom
+			std::swap(dataArr[start], dataArr[j]);
 
 			// j자리하고 바뀐 피봇값의 좌,우 정렬에 대한 값을 스택에 넣는다.
 			stack.push(end);
