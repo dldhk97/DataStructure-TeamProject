@@ -142,66 +142,7 @@ namespace sorts
 	}
 
 	template <typename dataType>
-	void nonRecursiveQuickSort(std::vector<dataType>& dataArr)
-	{
-		// 퀵소트 함수
-		int start = 0;
-		int end = dataArr.size();
-
-		int i, j;
-		dataType pivot;
-		Stack<int> stack;
-
-		// 스택에 넣는다
-
-		stack.push(end);
-		stack.push(start);
-
-		// 스택이 없어질 때 까지 정렬을 계속한다
-		while (stack.isEmpty())
-		{
-			start = stack.pop();
-			end = stack.pop();
-
-			pivot = dataArr[0];
-			i = start;
-			j = end;
-
-			// 해당 부분 정렬 완료
-			if (end - start < 2)
-				continue;
-
-			// i가 j랑 교차할 때 까지 i하고 j값을 계속 바꾼다
-			while (i < j)
-			{
-				do
-				{
-					i++;
-				} while (dataArr[i] < pivot);
-				do
-				{
-					j--;
-				} while (dataArr[j] > pivot);
-				// i가 j보다 낮으면 i값하고 j값 교환
-				if (i < j)
-				{
-					std::swap(dataArr[i], dataArr[j]);
-				}
-			}
-			// i가 j를 교차하면 피봇값하고 j값 교환
-
-			std::swap(dataArr[start], dataArr[j]);
-
-			// j자리하고 바뀐 피봇값의 좌,우 정렬에 대한 값을 스택에 넣는다.
-			stack.push(end);
-			stack.push(j + 1);
-			stack.push(j);
-			stack.push(start);
-		}
-	}
-
-	template <typename dataType>
-	void sort_of_three_key(std::vector<dataType> dataArr, int left, int middle, int right)
+	void sort_of_three_key(std::vector<dataType>& dataArr, int left, int middle, int right)
 	{
 		if (dataArr[left] > dataArr[middle])
 		{
@@ -216,4 +157,56 @@ namespace sorts
 			std::swap(dataArr[left], dataArr[middle]);
 		}
 	}
+
+	template <typename dataType>
+	void nonRecursiveQuickSort(std::vector<dataType>& arr)
+	{	
+		int n = arr.size();
+		Stack<int> stk;
+		dataType pivot;
+		int left, right, median;
+		int i, j;
+
+		left = 0;
+		right = n - 1;		
+
+		stk.push(right); stk.push(left);
+		while (!stk.isEmpty()) {
+			left = stk.pop();
+			right = stk.pop();
+
+			while (left < right) {
+				median = left + (right - left) / 2;
+
+				sort_of_three_key(arr, left, median, right);
+				pivot = arr[median];
+				arr[median] = arr[left];
+				arr[left] = pivot;
+
+				i = left;
+				j = right + 1;
+
+				while (true) {
+					while (arr[++i] < pivot);
+					while (pivot < arr[--j]);
+
+					if (j <= i)
+						break;
+
+					std::swap(arr[i], arr[j]);
+				}
+
+				arr[left] = arr[j];
+				arr[j] = pivot;
+
+				if (i < right) {
+					stk.push(right);
+					stk.push(i);
+				}
+				right = j - 1;
+			}
+		}
+	}
+
+	
 }
