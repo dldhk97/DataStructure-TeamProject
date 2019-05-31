@@ -83,7 +83,8 @@ void genRandStr(char* s, const int len)
 	static const char alphanum[] =
 		"0123456789"
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		"abcdefghijklmnopqrstuvwxyz";
+		"abcdefghijklmnopqrstuvwxyz"
+		"!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 	for (int i = 0; i < len; ++i)
 	{
