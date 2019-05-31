@@ -8,7 +8,7 @@
 
 //const std::string PATH = "C:\\Users\\Administrator\\source\\repos\\dldhk97\\DataStructure-TeamProject\\RandomDataCreator\\Debug\\";	//절대 경로 사용할 경우
 const std::string PATH = "";																											//상대 경로 사용할 경우
-const std::string DATASIZE = "10000";
+const std::string DATASIZE = "1000";
 
 template<typename T, typename fn> void timer(std::vector<std::pair<std::string, clock_t>>& stopwatch, std::string function_name, fn function, const T& input);
 
@@ -196,13 +196,13 @@ int main()
 
 	stopwatch.push_back(std::make_pair("", -1));
 
-	iom.displayMessage("기수 정렬 시작\n");
-	timer(stopwatch, "sorts::radixSort10(intArr)", sorts::radixSort10, intArr);
-	iom.displayMessage("10 완료 ");
-	timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
-	iom.displayMessage("16 완료 ");
-	timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
-	iom.displayMessage("Masking 완료\n\n");
+	//iom.displayMessage("기수 정렬 시작\n");
+	//timer(stopwatch, "sorts::radixSort10(intArr)", sorts::radixSort10, intArr);
+	//iom.displayMessage("10 완료 ");
+	//timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
+	//iom.displayMessage("16 완료 ");
+	//timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
+	//iom.displayMessage("Masking 완료\n\n");
 
 	iom.displayMessage("경과 : \n");
 	std::cout.setf(std::ios::right);

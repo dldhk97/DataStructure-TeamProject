@@ -1,12 +1,60 @@
+                    sorts::bubbleSort(intArr)	584 ms
+                 sorts::bubbleSort(doubleArr)	653 ms
+                    sorts::bubbleSort(strArr)	1350 ms
+                    sorts::bubbleSort(recArr)	580 ms
 
-                 sorts::insertionSort(intArr)	13 ms
-              sorts::insertionSort(doubleArr)	23 ms
-                 sorts::insertionSort(strArr)	550 ms
-                 sorts::insertionSort(recArr)	31 ms
+                 sorts::selectionSort(intArr)	42 ms
+              sorts::selectionSort(doubleArr)	54 ms
+                 sorts::selectionSort(strArr)	255 ms
+                 sorts::selectionSort(recArr)	73 ms
 
-                 sorts::insertionSort(intArr)	47 ms
-              sorts::insertionSort(doubleArr)	47 ms
-                 sorts::insertionSort(strArr)	541 ms
-                 sorts::insertionSort(recArr)	61 ms
+                 sorts::insertionSort(intArr)	15 ms
+              sorts::insertionSort(doubleArr)	16 ms
+                 sorts::insertionSort(strArr)	265 ms
+                 sorts::insertionSort(recArr)	100 ms
 
+                sorts::insertionSort(intList)	313 ms
+             sorts::insertionSort(doubleList)	326 ms
+                sorts::insertionSort(strList)	411 ms
+                sorts::insertionSort(recList)	241 ms
+
+                     sorts::mergeSort(intArr)	57 ms
+                  sorts::mergeSort(doubleArr)	59 ms
+                     sorts::mergeSort(strArr)	121 ms
+                     sorts::mergeSort(recArr)	87 ms
+
+         sorts::nonRecursiveMergeSort(intArr)	30 ms
+      sorts::nonRecursiveMergeSort(doubleArr)	41 ms
+         sorts::nonRecursiveMergeSort(strArr)	124 ms
+         sorts::nonRecursiveMergeSort(recArr)	47 ms
+
+              sorts::naturalMergeSort(intArr)	34 ms
+           sorts::naturalMergeSort(doubleArr)	18 ms
+              sorts::naturalMergeSort(strArr)	34 ms
+              sorts::naturalMergeSort(recArr)	27 ms
+
+                     sorts::shellSort(intArr)	22 ms
+                  sorts::shellSort(doubleArr)	14 ms
+                     sorts::shellSort(strArr)	43 ms
+                     sorts::shellSort(recArr)	23 ms
+
+                      sorts::heapSort(intArr)	19 ms
+                   sorts::heapSort(doubleArr)	23 ms
+                      sorts::heapSort(strArr)	71 ms
+                      sorts::heapSort(recArr)	22 ms
+
+            sorts::recursiveQuickSort(intArr)	20 ms
+         sorts::recursiveQuickSort(doubleArr)	18 ms
+            sorts::recursiveQuickSort(strArr)	44 ms
+            sorts::recursiveQuickSort(recArr)	12 ms
+
+     sorts::recursiveQuickSort_median(intArr)	11 ms
+  sorts::recursiveQuickSort_median(doubleArr)	12 ms
+     sorts::recursiveQuickSort_median(strArr)	32 ms
+     sorts::recursiveQuickSort_median(recArr)	14 ms
+
+         sorts::nonRecursiveQuickSort(intArr)	20 ms
+      sorts::nonRecursiveQuickSort(doubleArr)	18 ms
+         sorts::nonRecursiveQuickSort(strArr)	1961 ms
+         sorts::nonRecursiveQuickSort(recArr)	143 ms
 
