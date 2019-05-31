@@ -1,0 +1,12 @@
+
+                 sorts::insertionSort(intArr)	13 ms
+              sorts::insertionSort(doubleArr)	23 ms
+                 sorts::insertionSort(strArr)	550 ms
+                 sorts::insertionSort(recArr)	31 ms
+
+                 sorts::insertionSort(intArr)	47 ms
+              sorts::insertionSort(doubleArr)	47 ms
+                 sorts::insertionSort(strArr)	541 ms
+                 sorts::insertionSort(recArr)	61 ms
+
+

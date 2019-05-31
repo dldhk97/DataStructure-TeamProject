@@ -108,15 +108,15 @@ int main()
 	timer(stopwatch, "sorts::insertionSort(recArr)", sorts::insertionSort<std::list<Rectangle>>, recList);
 	iom.displayMessage("rectangle\n\n");
 
-	//iom.displayMessage("삽입 정렬(리스트) 시작\n");
-	//timer(stopwatch, "sorts::insertionSort_list(intArr)", sorts::insertionSort_list<int>, intList);
-	//iom.displayMessage("int, ");
-	//timer(stopwatch, "sorts::insertionSort_list(doubleArr)", sorts::insertionSort_list<double>, doubleList);
-	//iom.displayMessage("double, ");
-	//timer(stopwatch, "sorts::insertionSort_list(strArr)", sorts::insertionSort_list<std::string>, strList);
-	//iom.displayMessage("string, ");
-	//timer(stopwatch, "sorts::insertionSort_list(recArr)", sorts::insertionSort_list<Rectangle>, recList);
-	//iom.displayMessage("rectangle\n\n");
+	/*iom.displayMessage("삽입 정렬(리스트) 시작\n");
+	timer(stopwatch, "sorts::insertionSort_list(intArr)", sorts::insertionSort_list<int>, intList);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "sorts::insertionSort_list(doubleArr)", sorts::insertionSort_list<double>, doubleList);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "sorts::insertionSort_list(strArr)", sorts::insertionSort_list<std::string>, strList);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "sorts::insertionSort_list(recArr)", sorts::insertionSort_list<Rectangle>, recList);
+	iom.displayMessage("rectangle\n\n");*/
 
 	/*stopwatch.push_back(std::make_pair("", -1));
 
