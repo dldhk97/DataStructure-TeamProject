@@ -114,31 +114,23 @@ namespace sorts
 	template <typename dataType>
 	int medianOfThree(std::vector<dataType>& dataArr, int start, int end)
 	{
-		if (dataArr[end / 2] <= dataArr[end] && dataArr[end] <= dataArr[0])
-		{
-			return end;
-		}
-		if (dataArr[end / 2] <= dataArr[0] && dataArr[0] <= dataArr[end])
-		{
-			return 0;
-		}
-		if (dataArr[end] <= dataArr[end / 2] && dataArr[end / 2] <= dataArr[0])
-		{
-			return end / 2;
-		}
-		if (dataArr[end] <= dataArr[0] && dataArr[0] <= dataArr[end / 2])
-		{
-			return 0;
-		}
-		if (dataArr[0] <= dataArr[end] && dataArr[end] <= dataArr[end / 2])
-		{
-			return end;
-		}
 		if (dataArr[0] <= dataArr[end / 2] && dataArr[end / 2] <= dataArr[end])
-		{
 			return end / 2;
-		}
-		std::cout << "error!" << std::endl;
+
+		if (dataArr[end] <= dataArr[end / 2] && dataArr[end / 2] <= dataArr[0])
+			return end / 2;
+
+		if (dataArr[end/2] <= dataArr[0] && dataArr[0] <= dataArr[end])
+			return 0;
+
+		if (dataArr[end] <= dataArr[0] && dataArr[0] <= dataArr[end/2])
+			return 0;
+
+		if (dataArr[0] <= dataArr[end] && dataArr[end] <= dataArr[end / 2])
+			return end;
+
+		if (dataArr[0] <= dataArr[end] && dataArr[end] <= dataArr[end / 2])
+			return end;
 	}
 
 	template <typename dataType>
