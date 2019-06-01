@@ -215,13 +215,25 @@ int main()
 
 	stopwatch.push_back(std::make_pair("", -1));
 
-	//iom.displayMessage("기수 정렬 시작\n");
-	//timer(stopwatch, "sorts::radixSort10(intArr)", sorts::radixSort10, intArr);
-	//iom.displayMessage("10 완료 ");
-	//timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
-	//iom.displayMessage("16 완료 ");
-	//timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
-	//iom.displayMessage("Masking 완료\n\n");
+	iom.displayMessage("기수 정렬 시작\n");
+	timer(stopwatch, "sorts::radixSort10(intArr)", sorts::radixSort10, intArr);
+	iom.displayMessage("10 완료 ");
+	timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
+	iom.displayMessage("16 완료 ");
+	timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
+	iom.displayMessage("Masking 완료\n\n");
+
+	stopwatch.push_back(std::make_pair("", -1));
+
+	iom.displayMessage("std::sort 정렬 시작\n");
+	timer(stopwatch, "std::sort(intArr)", std::sort<int>, intArr);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "std::sort(doubleArr)", std::sort<double>, doubleArr);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "std::sort(strArr)", std::sort<std::string>, strArr);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "std::sort(recArr)", std::sort<Rectangle>, recArr);
+	iom.displayMessage("rectangle\n\n");
 
 	iom.displayMessage("경과 : \n");
 	std::cout.setf(std::ios::right);
