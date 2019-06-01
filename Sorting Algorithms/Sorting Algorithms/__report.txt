@@ -1,46 +1,46 @@
-                    sorts::bubbleSort(intArr)	1 ms
+                    sorts::bubbleSort(intArr)	2 ms
                  sorts::bubbleSort(doubleArr)	2 ms
-                    sorts::bubbleSort(strArr)	4 ms
+                    sorts::bubbleSort(strArr)	5 ms
                     sorts::bubbleSort(recArr)	1 ms
 
                  sorts::selectionSort(intArr)	1 ms
               sorts::selectionSort(doubleArr)	2 ms
                  sorts::selectionSort(strArr)	3 ms
-                 sorts::selectionSort(recArr)	11 ms
+                 sorts::selectionSort(recArr)	3 ms
 
                  sorts::insertionSort(intArr)	0 ms
-              sorts::insertionSort(doubleArr)	0 ms
-                 sorts::insertionSort(strArr)	0 ms
+              sorts::insertionSort(doubleArr)	1 ms
+                 sorts::insertionSort(strArr)	1 ms
                  sorts::insertionSort(recArr)	0 ms
 
-                sorts::insertionSort(intList)	2 ms
-             sorts::insertionSort(doubleList)	2 ms
-                sorts::insertionSort(strList)	4 ms
-                sorts::insertionSort(recList)	3 ms
+                sorts::insertionSort(intList)	1 ms
+             sorts::insertionSort(doubleList)	4 ms
+                sorts::insertionSort(strList)	3 ms
+                sorts::insertionSort(recList)	5 ms
 
                      sorts::mergeSort(intArr)	0 ms
                   sorts::mergeSort(doubleArr)	0 ms
-                     sorts::mergeSort(strArr)	0 ms
+                     sorts::mergeSort(strArr)	1 ms
                      sorts::mergeSort(recArr)	0 ms
 
-         sorts::nonRecursiveMergeSort(intArr)	0 ms
+         sorts::nonRecursiveMergeSort(intArr)	1 ms
       sorts::nonRecursiveMergeSort(doubleArr)	0 ms
          sorts::nonRecursiveMergeSort(strArr)	1 ms
-         sorts::nonRecursiveMergeSort(recArr)	1 ms
+         sorts::nonRecursiveMergeSort(recArr)	0 ms
 
-              sorts::naturalMergeSort(intArr)	1 ms
+              sorts::naturalMergeSort(intArr)	0 ms
            sorts::naturalMergeSort(doubleArr)	0 ms
               sorts::naturalMergeSort(strArr)	0 ms
-              sorts::naturalMergeSort(recArr)	0 ms
+              sorts::naturalMergeSort(recArr)	1 ms
 
-                     sorts::shellSort(intArr)	1 ms
+                     sorts::shellSort(intArr)	0 ms
                   sorts::shellSort(doubleArr)	0 ms
-                     sorts::shellSort(strArr)	0 ms
+                     sorts::shellSort(strArr)	1 ms
                      sorts::shellSort(recArr)	0 ms
 
                       sorts::heapSort(intArr)	0 ms
                    sorts::heapSort(doubleArr)	0 ms
-                      sorts::heapSort(strArr)	0 ms
+                      sorts::heapSort(strArr)	1 ms
                       sorts::heapSort(recArr)	0 ms
 
             sorts::recursiveQuickSort(intArr)	0 ms
@@ -58,9 +58,9 @@
          sorts::nonRecursiveQuickSort(strArr)	1 ms
          sorts::nonRecursiveQuickSort(recArr)	0 ms
 
-                   sorts::radixSort10(intArr)	0 ms
+                   sorts::radixSort10(intArr)	1 ms
                    sorts::radixSort16(intArr)	0 ms
-              sorts::radixSortMasking(intArr)	1 ms
+              sorts::radixSortMasking(intArr)	0 ms
 
                             std::sort(intArr)	0 ms
                          std::sort(doubleArr)	0 ms

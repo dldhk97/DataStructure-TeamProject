@@ -12,7 +12,7 @@ namespace sorts
 		{
 			for (int j = 0; j < size - 1 - i; j++) 
 			{
-				if (dataArr[j] > dataArr[j + 1]) 
+				if (dataArr[j] < dataArr[j + 1]) 
 				{
 					std::swap(dataArr[j], dataArr[j + 1]);
 				}
