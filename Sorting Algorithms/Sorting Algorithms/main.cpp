@@ -215,13 +215,27 @@ int main()
 
 	stopwatch.push_back(std::make_pair("", -1));
 
-	//iom.displayMessage("기수 정렬 시작\n");
-	//timer(stopwatch, "sorts::radixSort10(intArr)", sorts::radixSort10, intArr);
-	//iom.displayMessage("10 완료 ");
-	//timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
-	//iom.displayMessage("16 완료 ");
-	//timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
-	//iom.displayMessage("Masking 완료\n\n");
+	iom.displayMessage("기수 정렬 시작\n");
+	timer(stopwatch, "sorts::radixSort10(intArr)", sorts::radixSort10, intArr);
+	iom.displayMessage("10 완료 ");
+	timer(stopwatch, "sorts::radixSort16(intArr)", sorts::radixSort16, intArr);
+	iom.displayMessage("16 완료 ");
+	timer(stopwatch, "sorts::radixSortMasking(intArr)", sorts::radixSortMasking, intArr);
+	iom.displayMessage("Masking 완료\n\n");
+
+	stopwatch.push_back(std::make_pair("", -1));
+
+	auto stdsort = [](auto& container)->void { std::sort(std::begin(container), std::end(container)); };
+
+	iom.displayMessage("std::sort 정렬 시작\n");
+	timer(stopwatch, "std::sort(intArr)", stdsort, intArr);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "std::sort(doubleArr)", stdsort, doubleArr);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "std::sort(strArr)", stdsort, strArr);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "std::sort(recArr)", stdsort, recArr);
+	iom.displayMessage("rectangle\n\n");
 
 	iom.displayMessage("경과 : \n");
 	std::cout.setf(std::ios::right);
@@ -234,7 +248,7 @@ int main()
 	}
 
 	std::ofstream report;
-	report.open("_report.txt");
+	report.open("__report.txt");
 	for (auto i : stopwatch)
 	{
 		if (i.second >= 0)
@@ -257,7 +271,8 @@ void timer(std::vector<std::pair<std::string, clock_t>>& stopwatch, std::string 
 	stopwatch.push_back(std::make_pair(function_name, stop - start));
 
 	// DEBUG
-	std::string path = function_name.substr(7, function_name.size()) + "__sorted.txt";
+	std::replace(function_name.begin(), function_name.end(), ':', '.');
+	std::string path = "_" + function_name + "_sorted.txt";
 	std::ofstream result;
 	result.open(path);
 	for (auto i : temp)
