@@ -191,6 +191,18 @@ int main()
 
 	stopwatch.push_back(std::make_pair("", -1));
 
+	iom.displayMessage("최적화된 재귀 퀵 정렬 시작\n");
+	timer(stopwatch, "sorts::quickSort(intArr)", sorts::quickSort<int>, intArr);
+	iom.displayMessage("int, ");
+	timer(stopwatch, "sorts::quickSort(doubleArr)", sorts::quickSort<double>, doubleArr);
+	iom.displayMessage("double, ");
+	timer(stopwatch, "sorts::quickSort(strArr)", sorts::quickSort<std::string>, strArr);
+	iom.displayMessage("string, ");
+	timer(stopwatch, "sorts::quickSort(recArr)", sorts::quickSort<Rectangle>, recArr);
+	iom.displayMessage("rectangle\n\n");
+
+	stopwatch.push_back(std::make_pair("", -1));
+
 	iom.displayMessage("재귀 퀵 정렬(median_of_three) 시작\n");
 	timer(stopwatch, "sorts::recursiveQuickSort_median(intArr)", sorts::recursiveQuickSort_median<int>, intArr);
 	iom.displayMessage("int, ");

@@ -1,9 +1,62 @@
 #pragma once
-#include "Sort.h"
 #include "Stack.h"
 
 namespace sorts
 {
+	// https://www.geeksforgeeks.org/quicksort-tail-call-optimization-reducing-worst-case-space-log-n/
+
+	template<typename dataType>
+	int partition_(std::vector<dataType>& arr, int low, int high)
+	{
+		int pivot = arr[high];    // pivot 
+		int i = (low - 1);  // Index of smaller element 
+
+		for (int j = low; j <= high - 1; j++)
+		{
+			// If current element is smaller than or 
+			// equal to pivot 
+			if (arr[j] <= pivot)
+			{
+				++i;    // increment index of smaller element 
+				std::swap(arr[i], arr[j]);
+			}
+		}
+		std::swap(arr[i + 1], arr[high]);
+		return (i + 1);
+	}
+	
+	template<typename dataType>
+	void quickSort_(std::vector<dataType>& arr, int low, int high)
+	{
+		while (low < high)
+		{
+			/* pi is partitioning index, arr[p] is now
+			   at right place */
+			int pi = partition_(arr, low, high);
+
+			// If left part is smaller, then recur for left 
+			// part and handle right part iteratively 
+			if (pi - low < high - pi)
+			{
+				quickSort_(arr, low, pi - 1);
+				low = pi + 1;
+			}
+
+			// Else recur for right part 
+			else
+			{
+				quickSort_(arr, pi + 1, high);
+				high = pi - 1;
+			}
+		}
+	}
+
+	template<typename dataType>
+	void quickSort(std::vector<dataType>& arr)
+	{
+		quickSort_(arr, 0, arr.size() - 1);
+	}
+
 	template <typename dataType>
 	void recursiveQuickSort_(std::vector<dataType>& dataArr, int start, int end)
 	{
