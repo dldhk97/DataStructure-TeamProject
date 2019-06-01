@@ -44,6 +44,8 @@ namespace sorts
 	//	} while (++forward_iter != end_iter);
 	//}
 
+
+	// 참고 링크 : https://en.cppreference.com/w/cpp/algorithm/rotate
 	template<typename Container>
 	void insertionSort(Container& container)
 	{
