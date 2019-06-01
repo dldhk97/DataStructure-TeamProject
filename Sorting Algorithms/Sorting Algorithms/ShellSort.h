@@ -1,5 +1,4 @@
 #pragma once
-#include "Sort.h"
 namespace sorts
 {
 	// 시작 인덱스 first 부터 시작하는 부분리스트를 구성해 삽입 정렬을 시행한다.
