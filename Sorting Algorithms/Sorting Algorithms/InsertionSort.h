@@ -4,46 +4,25 @@
 
 namespace sorts
 {
-	/*template <typename dataType>
-	void insertionSort(std::vector<dataType>& dataArr)
+	// list의 경우 std::upper_bound(이진 탐색)보다 단순 순회가 더 빠르다
+	// 실험 결과 약 2배 차이
+	// 펜티엄 노트북, int형 100000개 정렬 기준
+	//						vector		list
+	// std::upper_bound 	4			88796
+	// sorts::upper_bound	4708		43053
+	template<class ForwardIt, class T>
+	ForwardIt upper_bound(ForwardIt first, ForwardIt last, const T& value)
 	{
-		int i, j;
-		dataType temp;
-		for (i = 1; i < dataArr.size(); i++)
+		auto it = first;
+		while (it != last)
 		{
-			temp = dataArr[(j = i)];
-			while (--j >= 0 && temp < dataArr[j])
-			{
-				dataArr[j + 1] = dataArr[j];
-				dataArr[j] = temp;
-			}
+			if (value < *it)
+				return it;
+
+			++it;
 		}
-	}*/
-
-	//template<typename Container>
-	//void insertionSort(Container& container)
-	//{
-	//	auto forward_iter = std::begin(container);
-	//	auto temp_iter = std::end(container);
-	//	auto begin_iter = std::begin(container);
-	//	auto end_iter = std::end(container);
-
-	//	do {
-	//		temp_iter = forward_iter;
-	//		auto temp_value = *temp_iter;
-
-	//		if (temp_iter == begin_iter)
-	//		{
-	//			continue;
-	//		}
-	//		while (--temp_iter != begin_iter && temp_value < *temp_iter)
-	//		{
-	//			*std::next(temp_iter) = *temp_iter;
-	//			*temp_iter = temp_value;
-	//		}
-	//	} while (++forward_iter != end_iter);
-	//}
-
+		return it;
+	}
 
 	// 참고 링크 : https://en.cppreference.com/w/cpp/algorithm/rotate
 	template<typename Container>
@@ -52,7 +31,8 @@ namespace sorts
 		auto first = std::begin(container);
 		auto last = std::end(container);
 
-		// std::upper_bound : 지정한 iterator를 순회하면서 *it값을 넘어가는 지점을 이진 탐색함. 그리고 그 위치(iterator) 반환. stable함
+		// std::upper_bound : 지정한 iterator를 순회하면서 *it값을 넘어가는 지점을 탐색함. 그리고 그 위치(iterator) 반환. stable함
+		//					  random iterator의 경우 이진 탐색 O(log n) 하고 아니면 순차 탐색 O(N)
 		// std::rotate : 원소들을 (왼쪽으로) shift 하고 왼쪽 넘어간 애들은 오른쪽 끝으로 넣음
 
 		// 처음~처음 부터 처음~끝 까지 루프를 돈다
@@ -60,32 +40,4 @@ namespace sorts
 		for (auto it = first; it != last; ++it)
 			std::rotate(std::upper_bound(first, it, *it), it, std::next(it));
 	}
-
-	/*template <typename dataType>
-	void insertionSort_list(std::list<dataType>& dataList)
-	{
-		for (auto j = 1U; j < dataList.size(); ++j)
-		{
-			auto itr = dataList.begin();
-			std::advance(itr, j);
-			const auto key = *itr;
-
-			for (auto i = j; i > 0U; --i)
-			{
-				std::advance(itr, -1);
-
-				if (key < *itr)
-				{
-					const dataType temp = *itr;
-					*itr = key;
-					*std::next(itr) = temp;
-				}
-				else
-				{
-					break;
-				}
-			}
-		}
-	}*/
-
 }
