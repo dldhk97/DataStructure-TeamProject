@@ -7,9 +7,9 @@ namespace sorts
 	// list의 경우 std::upper_bound(이진 탐색)보다 단순 순회가 더 빠르다
 	// 실험 결과 약 2배 차이
 	// 펜티엄 노트북, int형 100000개 정렬 기준
-	//						vector		list
-	// std::upper_bound 	4			88796
-	// sorts::upper_bound	4708		43053
+	// 　　　　　　　　　  vector	list
+	// std::upper_bound     4		88796
+	// sorts::upper_bound   4708		43053
 	template<class ForwardIt, class T>
 	ForwardIt upper_bound(ForwardIt first, ForwardIt last, const T& value)
 	{

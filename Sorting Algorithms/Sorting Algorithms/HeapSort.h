@@ -4,6 +4,13 @@ namespace sorts
 {
 	// https://www.geeksforgeeks.org/heap-sort/
 
+	// 이 코드가 기존 코드보다 깨끗함
+	// 수행 시간은
+	// int : old <= new
+	// dou : old <= new
+	// str : old > new (차이 큼)
+	// rec : 둘다 비슷
+
 	// To heapify a subtree rooted with node i which is 
 	// an index in arr[]. n is size of heap 
 	template <typename dataType>
@@ -32,44 +39,19 @@ namespace sorts
 	}
 
 	template <typename dataType>
-	void Adjust(std::vector<dataType>& arr, const int root, const int num)
-	{
-		dataType e = arr[root];
-		int j = 0;
-		for (j = 2 * root; j <= num; j *= 2)
-		{
-			if (j < num && arr[j] < arr[j + 1])
-			{
-				j++;
-			}
-			if (e >= arr[j])
-				break;
-			arr[j / 2] = arr[j];
-		}
-		arr[j / 2] = e;
-	}
-
-	template <typename dataType>
 	void heapSort(std::vector<dataType> & arr)
 	{
 		int count = arr.size() - 1;
-		//비감소 순으로 정렬
-		//for (int i = count / 2; i >= 1; i--) //히프로 조정
+
 		for (int i = count / 2 - 1; i >= 0; i--)
 		{
-			//Adjust(arr, i, count);
 			heapify(arr, count, i);
 		}
 
-		//for (int i = count - 1; i >= 1; i--)
 		for (int i = count - 1; i >= 0; i--)
 		{
-			//std::swap(arr[1], arr[i + 1]);
 			std::swap(arr[0], arr[i]);
-			//Adjust(arr, 1, i); //히프로 조정
 			heapify(arr, i, 0);
 		}
-
-		//arr.erase(arr.begin());
 	}
 }
