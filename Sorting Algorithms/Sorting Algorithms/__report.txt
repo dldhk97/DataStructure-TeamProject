@@ -1,9 +1,0 @@
-                      sorts::heapSort(intArr)	26 ms
-                   sorts::heapSort(doubleArr)	27 ms
-                      sorts::heapSort(strArr)	106 ms
-                      sorts::heapSort(recArr)	36 ms
-
-                            std::sort(intArr)	13 ms
-                         std::sort(doubleArr)	14 ms
-                            std::sort(strArr)	49 ms
-                            std::sort(recArr)	13 ms
